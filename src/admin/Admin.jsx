@@ -11,6 +11,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  ListSubheader,
   Toolbar,
 } from "@mui/material";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -43,13 +44,13 @@ const sideMenu = [
     submenus: [
       {
         icon: EditNoteOutlinedIcon,
-        title: "Dead",
-        path: "appointments/viewAppointments",
+        title: "View",
+        path: "appointment/viewAppointment",
       },
       {
         icon: EditNoteOutlinedIcon,
-        title: "Birth",
-        path: "appointments/bookApointments",
+        title: "Book",
+        path: "appointment/bookApointment",
       },
     ],
   },
@@ -126,12 +127,12 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
 
   const handleSubMenuClick = (path) => {
     navigate(`/admin/${path}`);
+    console.log(path);
   };
   return (
     <React.Fragment>
       <ListItemButton
         sx={{
-          width: "95%",
           backgroundColor:
             currentPath === `/admin/${path}` ? "#f0f3fb" : "inherit",
           color: currentPath === `/admin/${path}` ? "#000" : "inherit",
@@ -153,7 +154,6 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
                 key={index}
                 sx={{
                   pl: 4,
-                  width: "95%",
                   backgroundColor:
                     currentPath === `/admin/${subItem.path}`
                       ? "#f0f3fb"
@@ -197,9 +197,18 @@ function Admin(props) {
       <Toolbar />
       <List
         sx={{
-          m: " 0 1rem",
+          m: " 0 0.5rem",
           borderRadius: "1rem",
         }}
+        subheader={
+          <ListSubheader
+            component="div"
+            aria-labelledby="nested-list-subheader"
+            id="nested-list-subheader"
+          >
+            Main
+          </ListSubheader>
+        }
       >
         {sideMenu.map((item, index) => (
           <MenuItem

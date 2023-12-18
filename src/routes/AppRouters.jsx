@@ -9,6 +9,12 @@ const SignIn = React.lazy(() => import("../authentication/SignIn"));
 
 const Dashboard = React.lazy(() => import("../admin/scenes/Dashboard"));
 const Appointments = React.lazy(() => import("../admin/scenes/Appointments"));
+const BookAppointments = React.lazy(() =>
+  import("../admin/scenes/BookAppointment")
+);
+const ViewAppointments = React.lazy(() =>
+  import("../admin/scenes/ViewAppointment")
+);
 const Doctors = React.lazy(() => import("../admin/scenes/Doctors"));
 const Staff = React.lazy(() => import("../admin/scenes/Staff"));
 const Patients = React.lazy(() => import("../admin/scenes/Patients"));
@@ -22,8 +28,18 @@ const _route = [
     permission: ["user", "admin"],
   },
   {
-    path: "appointments",
+    path: "appointment",
     component: Appointments,
+    permission: ["user", "admin"],
+  },
+  {
+    path: "appointment/bookApointment",
+    component: BookAppointments,
+    permission: ["user", "admin"],
+  },
+  {
+    path: "appointment/viewAppointment",
+    component: ViewAppointments,
     permission: ["user", "admin"],
   },
   {

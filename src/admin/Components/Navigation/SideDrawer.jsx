@@ -62,7 +62,7 @@ const SideDrawer = ({
         open
       >
         <Box>
-          <div className="flex justify-center items-center mt-20">
+          <div className="flex justify-center items-center mt-12">
             <img src={logo} className="w-12 mr-3" alt="hospital logo" />
             <h1 className="text-2xl font-bold text-[#034694]">Chelsea</h1>
           </div>

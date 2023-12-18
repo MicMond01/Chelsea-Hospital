@@ -1,0 +1,866 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. Alex Johnson",
+      "department": "Emergency",
+      "specialization": "Emergency Medicine",
+      "degree": "MD",
+      "mobile": "+9988776655",
+      "email": "alex.johnson@example.com",
+      "joining_date": "2022-01-15",
+      "appointments": [
+        {
+          "id": 501,
+          "patient_name": "John Doe",
+          "date": "2023-01-20",
+          "time_from": "10:00 AM",
+          "time_to": "11:00 AM",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Dr. Sarah Davis",
+      "department": "Emergency",
+      "specialization": "Orthopedics",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "sarah.davis@example.com",
+      "joining_date": "2022-02-20",
+      "appointments": [
+        {
+          "id": 502,
+          "patient_name": "Jane Smith",
+          "date": "2023-02-28",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Completed"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Dr. Emily White",
+      "department": "Cardiology",
+      "specialization": "Cardiologist",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "emily.white@example.com",
+      "joining_date": "2022-03-05",
+      "appointments": [
+        {
+          "id": 503,
+          "patient_name": "Bob Johnson",
+          "date": "2023-03-10",
+          "time_from": "11:00 AM",
+          "time_to": "12:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dr. Sarah Miller",
+      "department": "Cardiology",
+      "specialization": "Cardiologist",
+      "degree": "MD",
+      "mobile": "+7788990011",
+      "email": "sarah.miller@example.com",
+      "joining_date": "2022-04-15",
+      "appointments": [
+        {
+          "id": 504,
+          "patient_name": "Alice Brown",
+          "date": "2023-04-05",
+          "time_from": "02:00 PM",
+          "time_to": "03:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dr. Michael Turner",
+      "department": "Orthopedics",
+      "specialization": "Orthopedic Surgeon",
+      "degree": "DO",
+      "mobile": "+8899001122",
+      "email": "michael.turner@example.com",
+      "joining_date": "2022-05-20",
+      "appointments": [
+        {
+          "id": 505,
+          "patient_name": "Charlie Davis",
+          "date": "2023-05-10",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Dr. Jessica White",
+      "department": "Pediatrics",
+      "specialization": "Pediatrician",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "jessica.white@example.com",
+      "joining_date": "2022-06-25",
+      "appointments": [
+        {
+          "id": 506,
+          "patient_name": "Ethan Smith",
+          "date": "2023-06-15",
+          "time_from": "03:30 PM",
+          "time_to": "04:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Dr. Benjamin Harris",
+      "department": "Endocrinology",
+      "specialization": "Endocrinologist",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "benjamin.harris@example.com",
+      "joining_date": "2022-07-10",
+      "appointments": [
+        {
+          "id": 507,
+          "patient_name": "Olivia Taylor",
+          "date": "2023-07-05",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Dr. Andrew Clark",
+      "department": "Emergency",
+      "specialization": "Emergency Medicine",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "andrew.clark@example.com",
+      "joining_date": "2022-08-15",
+      "appointments": [
+        {
+          "id": 508,
+          "patient_name": "Sophia Johnson",
+          "date": "2023-08-10",
+          "time_from": "09:00 AM",
+          "time_to": "10:00 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Dr. Laura Turner",
+      "department": "Emergency",
+      "specialization": "Trauma Surgery",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "laura.turner@example.com",
+      "joining_date": "2022-09-20",
+      "appointments": [
+        {
+          "id": 509,
+          "patient_name": "Liam Wilson",
+          "date": "2023-09-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Dr. Christopher Baker",
+      "department": "Cardiology",
+      "specialization": "Interventional Cardiology",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "christopher.baker@example.com",
+      "joining_date": "2022-10-10",
+      "appointments": [
+        {
+          "id": 510,
+          "patient_name": "Mia Martin",
+          "date": "2023-10-05",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Dr. Sophia Moore",
+      "department": "Cardiology",
+      "specialization": "Heart Failure Specialist",
+      "degree": "MD",
+      "mobile": "+4455667788",
+      "email": "sophia.moore@example.com",
+      "joining_date": "2022-11-20",
+      "appointments": [
+        {
+          "id": 511,
+          "patient_name": "Noah Jackson",
+          "date": "2023-11-15",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Dr. Ethan Davis",
+      "department": "Orthopedics",
+      "specialization": "Sports Medicine",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "ethan.davis@example.com",
+      "joining_date": "2022-12-10",
+      "appointments": [
+        {
+          "id": 512,
+          "patient_name": "Ava Anderson",
+          "date": "2023-12-05",
+          "time_from": "03:00 PM",
+          "time_to": "04:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Dr. Lily Parker",
+      "department": "Orthopedics",
+      "specialization": "Joint Replacement",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "lily.parker@example.com",
+      "joining_date": "2023-01-15",
+      "appointments": [
+        {
+          "id": 513,
+          "patient_name": "Elijah Harris",
+          "date": "2023-01-10",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Dr. Daniel Foster",
+      "department": "Pediatrics",
+      "specialization": "Neonatology",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "daniel.foster@example.com",
+      "joining_date": "2023-02-20",
+      "appointments": [
+        {
+          "id": 514,
+          "patient_name": "Grace Turner",
+          "date": "2023-02-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Dr. Olivia Wright",
+      "department": "Pediatrics",
+      "specialization": "Developmental Pediatrics",
+      "degree": "MD",
+      "mobile": "+4455667788",
+      "email": "olivia.wright@example.com",
+      "joining_date": "2023-03-15",
+      "appointments": [
+        {
+          "id": 515,
+          "patient_name": "Jackson Evans",
+          "date": "2023-03-10",
+          "time_from": "11:00 AM",
+          "time_to": "12:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Dr. Noah Taylor",
+      "department": "Endocrinology",
+      "specialization": "Diabetology",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "noah.taylor@example.com",
+      "joining_date": "2023-04-10",
+      "appointments": [
+        {
+          "id": 516,
+          "patient_name": "Aria Parker",
+          "date": "2023-04-05",
+          "time_from": "01:30 PM",
+          "time_to": "02:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Dr. Ava Anderson",
+      "department": "Endocrinology",
+      "specialization": "Thyroid Disorders",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "ava.anderson@example.com",
+      "joining_date": "2023-05-20",
+      "appointments": [
+        {
+          "id": 517,
+          "patient_name": "Liam Davis",
+          "date": "2023-05-15",
+          "time_from": "03:30 PM",
+          "time_to": "04:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+
+    {
+      "id": 18,
+      "name": "Dr. Mia Martin",
+      "department": "Gynecology",
+      "specialization": "Obstetrics",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "mia.martin@example.com",
+      "joining_date": "2023-06-10",
+      "appointments": [
+        {
+          "id": 518,
+          "patient_name": "Elijah Foster",
+          "date": "2023-06-05",
+          "time_from": "02:00 PM",
+          "time_to": "03:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Dr. Liam Wilson",
+      "department": "Gynecology",
+      "specialization": "Reproductive Endocrinology",
+      "degree": "DO",
+      "mobile": "+5566778899",
+      "email": "liam.wilson@example.com",
+      "joining_date": "2023-07-20",
+      "appointments": [
+        {
+          "id": 519,
+          "patient_name": "Sophia Taylor",
+          "date": "2023-07-15",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Dr. Jackson Evans",
+      "department": "Ophthalmology",
+      "specialization": "Retinal Surgery",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "jackson.evans@example.com",
+      "joining_date": "2023-08-15",
+      "appointments": [
+        {
+          "id": 520,
+          "patient_name": "Olivia Wright",
+          "date": "2023-08-10",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Dr. Aria Parker",
+      "department": "Ophthalmology",
+      "specialization": "Corneal Diseases",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "aria.parker@example.com",
+      "joining_date": "2023-09-20",
+      "appointments": [
+        {
+          "id": 521,
+          "patient_name": "Ethan Davis",
+          "date": "2023-09-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Dr. Elijah Harris",
+      "department": "Dermatology",
+      "specialization": "Cosmetic Dermatology",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "elijah.harris@example.com",
+      "joining_date": "2023-10-10",
+      "appointments": [
+        {
+          "id": 522,
+          "patient_name": "Lily Parker",
+          "date": "2023-10-05",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Dr. Grace Turner",
+      "department": "Dermatology",
+      "specialization": "Mohs Surgery",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "grace.turner@example.com",
+      "joining_date": "2023-11-20",
+      "appointments": [
+        {
+          "id": 523,
+          "patient_name": "Daniel Foster",
+          "date": "2023-11-15",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Dr. Noah Taylor",
+      "department": "Neurology",
+      "specialization": "Epilepsy Specialist",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "noah.taylor@example.com",
+      "joining_date": "2023-12-10",
+      "appointments": [
+        {
+          "id": 524,
+          "patient_name": "Ava Anderson",
+          "date": "2023-12-05",
+          "time_from": "03:00 PM",
+          "time_to": "04:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Dr. Ava Anderson",
+      "department": "Neurology",
+      "specialization": "Movement Disorders",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "ava.anderson@example.com",
+      "joining_date": "2024-01-15",
+      "appointments": [
+        {
+          "id": 525,
+          "patient_name": "Liam Davis",
+          "date": "2024-01-10",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Dr. Ethan Foster",
+      "department": "Orthopedics",
+      "specialization": "Sports Medicine",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "ethan.foster@example.com",
+      "joining_date": "2024-02-10",
+      "appointments": [
+        {
+          "id": 526,
+          "patient_name": "Ella Wright",
+          "date": "2024-02-05",
+          "time_from": "02:00 PM",
+          "time_to": "03:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Dr. Olivia Wright",
+      "department": "Orthopedics",
+      "specialization": "Joint Replacement",
+      "degree": "DO",
+      "mobile": "+5566778899",
+      "email": "olivia.wright@example.com",
+      "joining_date": "2024-03-20",
+      "appointments": [
+        {
+          "id": 527,
+          "patient_name": "Mia Martin",
+          "date": "2024-03-15",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Dr. Elijah Turner",
+      "department": "ENT",
+      "specialization": "Rhinosinusitis Specialist",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "elijah.turner@example.com",
+      "joining_date": "2024-04-10",
+      "appointments": [
+        {
+          "id": 528,
+          "patient_name": "Noah Taylor",
+          "date": "2024-04-05",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Dr. Lily Parker",
+      "department": "ENT",
+      "specialization": "Head and Neck Surgery",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "lily.parker@example.com",
+      "joining_date": "2024-05-20",
+      "appointments": [
+        {
+          "id": 529,
+          "patient_name": "Grace Turner",
+          "date": "2024-05-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Dr. Daniel Foster",
+      "department": "Psychiatry",
+      "specialization": "Child and Adolescent Psychiatry",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "daniel.foster@example.com",
+      "joining_date": "2024-06-10",
+      "appointments": [
+        {
+          "id": 530,
+          "patient_name": "Jackson Evans",
+          "date": "2024-06-05",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Dr. Sophia Taylor",
+      "department": "Psychiatry",
+      "specialization": "Addiction Psychiatry",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "sophia.taylor@example.com",
+      "joining_date": "2024-07-20",
+      "appointments": [
+        {
+          "id": 531,
+          "patient_name": "Aria Parker",
+          "date": "2024-07-15",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+
+    {
+      "id": 32,
+      "name": "Dr. Nathan Adams",
+      "department": "Cardiology",
+      "specialization": "Interventional Cardiology",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "nathan.adams@example.com",
+      "joining_date": "2024-08-10",
+      "appointments": [
+        {
+          "id": 532,
+          "patient_name": "Ethan Turner",
+          "date": "2024-08-05",
+          "time_from": "02:00 PM",
+          "time_to": "03:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Dr. Zoe Carter",
+      "department": "Cardiology",
+      "specialization": "Electrophysiology",
+      "degree": "DO",
+      "mobile": "+5566778899",
+      "email": "zoe.carter@example.com",
+      "joining_date": "2024-09-20",
+      "appointments": [
+        {
+          "id": 533,
+          "patient_name": "Mila Johnson",
+          "date": "2024-09-15",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Dr. Samuel Evans",
+      "department": "Ophthalmology",
+      "specialization": "Retina Specialist",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "samuel.evans@example.com",
+      "joining_date": "2024-10-10",
+      "appointments": [
+        {
+          "id": 534,
+          "patient_name": "Liam Parker",
+          "date": "2024-10-05",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Dr. Stella White",
+      "department": "Ophthalmology",
+      "specialization": "Cornea and External Diseases",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "stella.white@example.com",
+      "joining_date": "2024-11-20",
+      "appointments": [
+        {
+          "id": 535,
+          "patient_name": "Eva Taylor",
+          "date": "2024-11-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Dr. Christopher Brown",
+      "department": "Dermatology",
+      "specialization": "Cosmetic Dermatology",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "christopher.brown@example.com",
+      "joining_date": "2024-12-10",
+      "appointments": [
+        {
+          "id": 536,
+          "patient_name": "Luna Adams",
+          "date": "2024-12-05",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "Dr. Aria Foster",
+      "department": "Dermatology",
+      "specialization": "Pediatric Dermatology",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "aria.foster@example.com",
+      "joining_date": "2025-01-20",
+      "appointments": [
+        {
+          "id": 537,
+          "patient_name": "Leo Carter",
+          "date": "2025-01-15",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Dr. Ethan Turner",
+      "department": "Emergency",
+      "specialization": "Trauma Surgery",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "ethan.turner@example.com",
+      "joining_date": "2025-02-10",
+      "appointments": [
+        {
+          "id": 538,
+          "patient_name": "Olivia Adams",
+          "date": "2025-02-05",
+          "time_from": "03:00 PM",
+          "time_to": "04:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Dr. Mia Parker",
+      "department": "Emergency",
+      "specialization": "Emergency Medicine",
+      "degree": "DO",
+      "mobile": "+5566778899",
+      "email": "mia.parker@example.com",
+      "joining_date": "2025-03-20",
+      "appointments": [
+        {
+          "id": 539,
+          "patient_name": "Noah White",
+          "date": "2025-03-15",
+          "time_from": "09:30 AM",
+          "time_to": "10:30 AM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Dr. Olivia Adams",
+      "department": "Orthopedics",
+      "specialization": "Sports Medicine",
+      "degree": "MD",
+      "mobile": "+1122334455",
+      "email": "olivia.adams@example.com",
+      "joining_date": "2025-04-10",
+      "appointments": [
+        {
+          "id": 540,
+          "patient_name": "Ethan Turner",
+          "date": "2025-04-05",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Dr. Noah White",
+      "department": "Orthopedics",
+      "specialization": "Joint Replacement",
+      "degree": "MD",
+      "mobile": "+3344556677",
+      "email": "noah.white@example.com",
+      "joining_date": "2025-05-20",
+      "appointments": [
+        {
+          "id": 541,
+          "patient_name": "Mia Parker",
+          "date": "2025-05-15",
+          "time_from": "02:30 PM",
+          "time_to": "03:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Dr. Leo Carter",
+      "department": "Gynecology",
+      "specialization": "Obstetrics",
+      "degree": "MD",
+      "mobile": "+5566778899",
+      "email": "leo.carter@example.com",
+      "joining_date": "2025-06-10",
+      "appointments": [
+        {
+          "id": 542,
+          "patient_name": "Aria Foster",
+          "date": "2025-06-05",
+          "time_from": "11:30 AM",
+          "time_to": "12:30 PM",
+          "status": "Scheduled"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "name": "Dr. Luna Adams",
+      "department": "Gynecology",
+      "specialization": "Reproductive Endocrinology",
+      "degree": "DO",
+      "mobile": "+1122334455",
+      "email": "luna.adams@example.com",
+      "joining_date": "2025-07-20",
+      "appointments": [
+        {
+          "id": 543,
+          "patient_name": "Christopher Brown",
+          "date": "2025-07-15",
+          "time_from": "01:00 PM",
+          "time_to": "02:00 PM",
+          "status": "Scheduled"
+        }
+      ]
+    }
+  ]
+}

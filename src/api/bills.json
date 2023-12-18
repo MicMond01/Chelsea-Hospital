@@ -1,0 +1,678 @@
+{
+  "bills": [
+    {
+      "id": 3001,
+      "patient_name": "Alice Johnson",
+      "admission_id": 301,
+      "doctor_name": "Dr. Michael Anderson",
+      "status": "Paid",
+      "date": "2023-01-28",
+      "tax": 5.0,
+      "discount": 10.0,
+      "total": 180.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4001,
+          "payment_date": "2023-01-28",
+          "amount": 180.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3002,
+      "patient_name": "Ella Brown",
+      "admission_id": 302,
+      "doctor_name": "Dr. Jessica Miller",
+      "status": "Pending",
+      "date": "2023-02-10",
+      "tax": 6.0,
+      "discount": 12.0,
+      "total": 200.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": []
+    },
+    {
+      "id": 3003,
+      "patient_name": "Oliver Davis",
+      "admission_id": 303,
+      "doctor_name": "Dr. Emily White",
+      "status": "Paid",
+      "date": "2023-02-15",
+      "tax": 4.5,
+      "discount": 8.0,
+      "total": 150.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": [
+        {
+          "id": 4002,
+          "payment_date": "2023-02-15",
+          "amount": 150.0,
+          "method": "Cash"
+        }
+      ]
+    },
+    {
+      "id": 3004,
+      "patient_name": "Sophia Wilson",
+      "admission_id": 304,
+      "doctor_name": "Dr. Benjamin Taylor",
+      "status": "Pending",
+      "date": "2023-03-05",
+      "tax": 4.0,
+      "discount": 9.0,
+      "total": 190.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": []
+    },
+    {
+      "id": 3005,
+      "patient_name": "Jackson Smith",
+      "admission_id": 305,
+      "doctor_name": "Dr. Olivia Clark",
+      "status": "Paid",
+      "date": "2023-03-18",
+      "tax": 5.5,
+      "discount": 11.0,
+      "total": 210.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4003,
+          "payment_date": "2023-03-18",
+          "amount": 210.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3006,
+      "patient_name": "Aiden Miller",
+      "admission_id": 306,
+      "doctor_name": "Dr. Sophia Harris",
+      "status": "Pending",
+      "date": "2023-04-02",
+      "tax": 6.5,
+      "discount": 13.0,
+      "total": 220.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3007,
+      "patient_name": "Abigail Anderson",
+      "admission_id": 307,
+      "doctor_name": "Dr. Jackson Davis",
+      "status": "Paid",
+      "date": "2023-04-15",
+      "tax": 4.2,
+      "discount": 8.5,
+      "total": 200.0,
+      "services": ["Emergency Medicine Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4004,
+          "payment_date": "2023-04-15",
+          "amount": 200.0,
+          "method": "Cash"
+        }
+      ]
+    },
+    {
+      "id": 3008,
+      "patient_name": "Elijah White",
+      "admission_id": 308,
+      "doctor_name": "Dr. Lily Moore",
+      "status": "Pending",
+      "date": "2023-05-01",
+      "tax": 5.0,
+      "discount": 10.0,
+      "total": 180.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": []
+    },
+    {
+      "id": 3009,
+      "patient_name": "Scarlett Brown",
+      "admission_id": 309,
+      "doctor_name": "Dr. Noah Wilson",
+      "status": "Paid",
+      "date": "2023-05-15",
+      "tax": 4.8,
+      "discount": 9.5,
+      "total": 190.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4005,
+          "payment_date": "2023-05-15",
+          "amount": 190.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3010,
+      "patient_name": "Zoe Thomas",
+      "admission_id": 310,
+      "doctor_name": "Dr. William Turner",
+      "status": "Pending",
+      "date": "2023-06-01",
+      "tax": 6.0,
+      "discount": 12.0,
+      "total": 220.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3011,
+      "patient_name": "Mason Evans",
+      "admission_id": 311,
+      "doctor_name": "Dr. Mia Lee",
+      "status": "Paid",
+      "date": "2023-06-15",
+      "tax": 5.2,
+      "discount": 10.5,
+      "total": 200.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4006,
+          "payment_date": "2023-06-15",
+          "amount": 200.0,
+          "method": "Cash"
+        }
+      ]
+    },
+    {
+      "id": 3012,
+      "patient_name": "Aria Wilson",
+      "admission_id": 312,
+      "doctor_name": "Dr. Ethan Harris",
+      "status": "Pending",
+      "date": "2023-07-01",
+      "tax": 7.0,
+      "discount": 14.0,
+      "total": 240.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3013,
+      "patient_name": "Ethan Foster",
+      "admission_id": 313,
+      "doctor_name": "Dr. Olivia Martinez",
+      "status": "Paid",
+      "date": "2023-07-15",
+      "tax": 6.5,
+      "discount": 13.0,
+      "total": 230.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": [
+        {
+          "id": 4007,
+          "payment_date": "2023-07-15",
+          "amount": 230.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3014,
+      "patient_name": "Lily Garcia",
+      "admission_id": 314,
+      "doctor_name": "Dr. Logan Taylor",
+      "status": "Pending",
+      "date": "2023-08-01",
+      "tax": 5.8,
+      "discount": 11.5,
+      "total": 210.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": []
+    },
+    {
+      "id": 3015,
+      "patient_name": "Logan Brooks",
+      "admission_id": 315,
+      "doctor_name": "Dr. Ava Parker",
+      "status": "Paid",
+      "date": "2023-08-15",
+      "tax": 7.2,
+      "discount": 14.5,
+      "total": 250.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4008,
+          "payment_date": "2023-08-15",
+          "amount": 250.0,
+          "method": "Cash"
+        }
+      ]
+    },
+    {
+      "id": 3016,
+      "patient_name": "Mia Harrison",
+      "admission_id": 316,
+      "doctor_name": "Dr. Benjamin Anderson",
+      "status": "Pending",
+      "date": "2023-09-01",
+      "tax": 8.0,
+      "discount": 16.0,
+      "total": 260.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3017,
+      "patient_name": "Noah Foster",
+      "admission_id": 317,
+      "doctor_name": "Dr. Emma Cooper",
+      "status": "Paid",
+      "date": "2023-09-15",
+      "tax": 6.3,
+      "discount": 12.5,
+      "total": 240.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4009,
+          "payment_date": "2023-09-15",
+          "amount": 240.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3018,
+      "patient_name": "Ava Powell",
+      "admission_id": 318,
+      "doctor_name": "Dr. Liam Adams",
+      "status": "Pending",
+      "date": "2023-10-01",
+      "tax": 7.5,
+      "discount": 15.0,
+      "total": 270.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3019,
+      "patient_name": "Elijah Turner",
+      "admission_id": 319,
+      "doctor_name": "Dr. Olivia Martinez",
+      "status": "Paid",
+      "date": "2023-10-15",
+      "tax": 9.0,
+      "discount": 18.0,
+      "total": 280.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": [
+        {
+          "id": 4010,
+          "payment_date": "2023-10-15",
+          "amount": 280.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3020,
+      "patient_name": "Grace Turner",
+      "admission_id": 320,
+      "doctor_name": "Dr. Logan Taylor",
+      "status": "Pending",
+      "date": "2023-11-01",
+      "tax": 8.5,
+      "discount": 17.0,
+      "total": 290.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": []
+    },
+    {
+      "id": 3021,
+      "patient_name": "Lucas Turner",
+      "admission_id": 321,
+      "doctor_name": "Dr. Ava Parker",
+      "status": "Paid",
+      "date": "2023-11-15",
+      "tax": 7.8,
+      "discount": 15.5,
+      "total": 300.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": [
+        {
+          "id": 4011,
+          "payment_date": "2023-11-15",
+          "amount": 300.0,
+          "method": "Cash"
+        }
+      ]
+    },
+    {
+      "id": 3022,
+      "patient_name": "Aiden Bennett",
+      "admission_id": 322,
+      "doctor_name": "Dr. Mia Turner",
+      "status": "Pending",
+      "date": "2023-12-01",
+      "tax": 6.2,
+      "discount": 12.0,
+      "total": 310.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3023,
+      "patient_name": "Olivia Bennett",
+      "admission_id": 323,
+      "doctor_name": "Dr. Noah Adams",
+      "status": "Paid",
+      "date": "2023-12-15",
+      "tax": 5.5,
+      "discount": 11.0,
+      "total": 320.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4012,
+          "payment_date": "2023-12-15",
+          "amount": 320.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3024,
+      "patient_name": "Ethan Bennett",
+      "admission_id": 324,
+      "doctor_name": "Dr. Ava Turner",
+      "status": "Pending",
+      "date": "2024-01-01",
+      "tax": 4.7,
+      "discount": 9.5,
+      "total": 330.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3025,
+      "patient_name": "Mia Foster",
+      "admission_id": 325,
+      "doctor_name": "Dr. Oliver Bennett",
+      "status": "Pending",
+      "date": "2024-01-15",
+      "tax": 4.0,
+      "discount": 8.0,
+      "total": 340.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3026,
+      "patient_name": "Liam Foster",
+      "admission_id": 326,
+      "doctor_name": "Dr. Emma Adams",
+      "status": "Paid",
+      "date": "2024-02-01",
+      "tax": 3.5,
+      "discount": 7.0,
+      "total": 350.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4013,
+          "payment_date": "2024-02-01",
+          "amount": 350.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3027,
+      "patient_name": "Olivia Foster",
+      "admission_id": 327,
+      "doctor_name": "Dr. Elijah Taylor",
+      "status": "Pending",
+      "date": "2024-02-15",
+      "tax": 2.8,
+      "discount": 6.0,
+      "total": 360.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3028,
+      "patient_name": "Ethan Turner",
+      "admission_id": 328,
+      "doctor_name": "Dr. Mia Turner",
+      "status": "Pending",
+      "date": "2024-03-01",
+      "tax": 2.2,
+      "discount": 5.0,
+      "total": 370.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3029,
+      "patient_name": "Ava Turner",
+      "admission_id": 329,
+      "doctor_name": "Dr. Noah Adams",
+      "status": "Paid",
+      "date": "2024-03-15",
+      "tax": 1.5,
+      "discount": 4.0,
+      "total": 380.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4014,
+          "payment_date": "2024-03-15",
+          "amount": 380.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3030,
+      "patient_name": "Noah Turner",
+      "admission_id": 330,
+      "doctor_name": "Dr. Ava Turner",
+      "status": "Pending",
+      "date": "2024-04-01",
+      "tax": 1.0,
+      "discount": 3.0,
+      "total": 390.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3031,
+      "patient_name": "Isabella Wright",
+      "admission_id": 331,
+      "doctor_name": "Dr. Benjamin Walker",
+      "status": "Pending",
+      "date": "2024-04-15",
+      "tax": 3.0,
+      "discount": 6.0,
+      "total": 400.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3032,
+      "patient_name": "Mason Wright",
+      "admission_id": 332,
+      "doctor_name": "Dr. Chloe Harris",
+      "status": "Paid",
+      "date": "2024-05-01",
+      "tax": 2.5,
+      "discount": 5.0,
+      "total": 410.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4015,
+          "payment_date": "2024-05-01",
+          "amount": 410.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3033,
+      "patient_name": "Sophia Wright",
+      "admission_id": 333,
+      "doctor_name": "Dr. Liam Anderson",
+      "status": "Pending",
+      "date": "2024-05-15",
+      "tax": 2.0,
+      "discount": 4.0,
+      "total": 420.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3034,
+      "patient_name": "Oliver Mitchell",
+      "admission_id": 334,
+      "doctor_name": "Dr. Emma Baker",
+      "status": "Pending",
+      "date": "2024-06-01",
+      "tax": 2.5,
+      "discount": 5.0,
+      "total": 430.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3035,
+      "patient_name": "Emma Mitchell",
+      "admission_id": 335,
+      "doctor_name": "Dr. William Foster",
+      "status": "Paid",
+      "date": "2024-06-15",
+      "tax": 2.0,
+      "discount": 4.0,
+      "total": 440.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4016,
+          "payment_date": "2024-06-15",
+          "amount": 440.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3036,
+      "patient_name": "Aiden Mitchell",
+      "admission_id": 336,
+      "doctor_name": "Dr. Sofia Taylor",
+      "status": "Pending",
+      "date": "2024-07-01",
+      "tax": 1.5,
+      "discount": 3.0,
+      "total": 450.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    },
+    {
+      "id": 3040,
+      "patient_name": "Ethan Taylor",
+      "admission_id": 340,
+      "doctor_name": "Dr. Mia Lewis",
+      "status": "Pending",
+      "date": "2024-09-01",
+      "tax": 2.0,
+      "discount": 4.0,
+      "total": 490.0,
+      "services": [
+        "Emergency Medicine Consultation",
+        "Blood Test",
+        "Medications"
+      ],
+      "payments": []
+    },
+    {
+      "id": 3041,
+      "patient_name": "Aria Taylor",
+      "admission_id": 341,
+      "doctor_name": "Dr. Elijah Turner",
+      "status": "Paid",
+      "date": "2024-09-15",
+      "tax": 1.5,
+      "discount": 3.0,
+      "total": 500.0,
+      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
+      "payments": [
+        {
+          "id": 4019,
+          "payment_date": "2024-09-15",
+          "amount": 500.0,
+          "method": "Credit Card"
+        }
+      ]
+    },
+    {
+      "id": 3042,
+      "patient_name": "Liam Taylor",
+      "admission_id": 342,
+      "doctor_name": "Dr. Scarlett Harris",
+      "status": "Pending",
+      "date": "2024-10-01",
+      "tax": 1.0,
+      "discount": 2.0,
+      "total": 510.0,
+      "services": ["Orthopedics Consultation", "X-ray", "Pain Relief"],
+      "payments": []
+    }
+  ]
+}

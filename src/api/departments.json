@@ -1,0 +1,916 @@
+{
+  "departments": [
+    {
+      "id": 1,
+      "name": "Emergency",
+      "specialties": ["Trauma", "Cardiology", "Neurology"],
+      "patients": [
+        {
+          "id": 101,
+          "name": "John Doe",
+          "gender": "Male",
+          "address": "456 Oak Street, Cityville",
+          "mobile": "+1122334455",
+          "birth_date": "1985-05-20",
+          "blood_group": "AB+",
+          "treatments": [
+            {
+              "id": 1001,
+              "date": "2023-01-20",
+              "diagnosis": "Fever",
+              "medications": ["Paracetamol", "Antibiotics"],
+              "tests": ["Blood Test"],
+              "doctor": "Dr. Alex Johnson"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2001,
+              "admission_date": "2023-01-19",
+              "discharge_date": "2023-01-25",
+              "discharge_reason": "Recovered",
+              "consulting_doctor": "Dr. Alex Johnson",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        },
+        {
+          "id": 102,
+          "name": "Jane Smith",
+          "gender": "Female",
+          "address": "789 Maple Avenue, Townsville",
+          "mobile": "+2233445566",
+          "birth_date": "1977-11-10",
+          "blood_group": "O-",
+          "treatments": [
+            {
+              "id": 1002,
+              "date": "2023-02-28",
+              "diagnosis": "Injury",
+              "medications": ["Painkillers", "Rest"],
+              "tests": ["X-ray"],
+              "doctor": "Dr. Sarah Davis"
+            }
+          ],
+          "actions": ["X-ray", "Pain Relief"],
+          "admissions": [
+            {
+              "id": 2002,
+              "admission_date": "2023-02-27",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Sarah Davis",
+              "services": ["Room Charge", "Consultation", "X-ray"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cardiology",
+      "specialties": ["Cardiovascular Imaging", "Heart Rhythm Disorders"],
+      "patients": [
+        {
+          "id": 201,
+          "name": "Bob Johnson",
+          "gender": "Male",
+          "address": "101 Pine Lane, Villagetown",
+          "mobile": "+3344556677",
+          "birth_date": "1968-08-15",
+          "blood_group": "A+",
+          "treatments": [
+            {
+              "id": 1003,
+              "date": "2023-03-10",
+              "diagnosis": "Heart Attack",
+              "medications": ["Aspirin", "Beta-Blockers"],
+              "tests": ["ECG", "Echocardiogram"],
+              "doctor": "Dr. Emily White"
+            }
+          ],
+          "actions": ["Prescription", "Follow-up Appointment"],
+          "admissions": [
+            {
+              "id": 2003,
+              "admission_date": "2023-03-09",
+              "discharge_date": "2023-03-15",
+              "discharge_reason": "Stable",
+              "consulting_doctor": "Dr. Emily White",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Orthopedics",
+      "specialties": ["Sports Medicine", "Joint Replacement"],
+      "patients": [
+        {
+          "id": 301,
+          "name": "Alice Brown",
+          "gender": "Female",
+          "address": "202 Cedar Road, Hamletville",
+          "mobile": "+4455667788",
+          "birth_date": "1980-12-05",
+          "blood_group": "B-",
+          "treatments": [
+            {
+              "id": 1004,
+              "date": "2023-04-15",
+              "diagnosis": "Fracture",
+              "medications": ["Painkillers", "Physical Therapy"],
+              "tests": ["X-ray"],
+              "doctor": "Dr. Michael Johnson"
+            }
+          ],
+          "actions": ["X-ray", "Physical Therapy"],
+          "admissions": [
+            {
+              "id": 2004,
+              "admission_date": "2023-04-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Michael Johnson",
+              "services": ["Room Charge", "Consultation", "X-ray"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pediatrics",
+      "specialties": ["General Pediatrics", "Pediatric Surgery"],
+      "patients": [
+        {
+          "id": 401,
+          "name": "Sophia Miller",
+          "gender": "Female",
+          "address": "303 Rose Avenue, Suburbia",
+          "mobile": "+5566778899",
+          "birth_date": "2010-03-08",
+          "blood_group": "O+",
+          "treatments": [
+            {
+              "id": 1005,
+              "date": "2023-05-12",
+              "diagnosis": "Flu",
+              "medications": ["Antiviral", "Rest"],
+              "tests": ["Throat Swab"],
+              "doctor": "Dr. Olivia Wilson"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2005,
+              "admission_date": "2023-05-11",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Olivia Wilson",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ophthalmology",
+      "specialties": ["Cataract Surgery", "Retinal Disorders"],
+      "patients": [
+        {
+          "id": 501,
+          "name": "David Clark",
+          "gender": "Male",
+          "address": "404 Pine Street, Hometown",
+          "mobile": "+1122334455",
+          "birth_date": "1955-11-25",
+          "blood_group": "A-",
+          "treatments": [
+            {
+              "id": 1006,
+              "date": "2023-06-20",
+              "diagnosis": "Cataract",
+              "medications": ["Eye Drops", "Pre-op Evaluation"],
+              "tests": ["Eye Exam", "Ultrasound"],
+              "doctor": "Dr. Sophia Adams"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2006,
+              "admission_date": "2023-06-19",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Sophia Adams",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Dermatology",
+      "specialties": ["Skin Cancer", "Acne Treatment"],
+      "patients": [
+        {
+          "id": 601,
+          "name": "Eva Turner",
+          "gender": "Female",
+          "address": "505 Oak Lane, Countryside",
+          "mobile": "+3344556677",
+          "birth_date": "1992-07-15",
+          "blood_group": "B+",
+          "treatments": [
+            {
+              "id": 1007,
+              "date": "2023-07-10",
+              "diagnosis": "Psoriasis",
+              "medications": ["Topical Cream", "UV Therapy"],
+              "tests": ["Skin Biopsy"],
+              "doctor": "Dr. Daniel Miller"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2007,
+              "admission_date": "2023-07-09",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Daniel Miller",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Gastroenterology",
+      "specialties": ["Colonoscopy", "Liver Diseases"],
+      "patients": [
+        {
+          "id": 701,
+          "name": "Oliver Robinson",
+          "gender": "Male",
+          "address": "606 Maple Drive, Riverside",
+          "mobile": "+2233445566",
+          "birth_date": "1970-04-30",
+          "blood_group": "O-",
+          "treatments": [
+            {
+              "id": 1008,
+              "date": "2023-08-15",
+              "diagnosis": "Gastritis",
+              "medications": ["Proton Pump Inhibitors", "Diet Modification"],
+              "tests": ["Endoscopy", "Blood Tests"],
+              "doctor": "Dr. Olivia Garcia"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2008,
+              "admission_date": "2023-08-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Olivia Garcia",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Neurology",
+      "specialties": ["Stroke Management", "Epilepsy"],
+      "patients": [
+        {
+          "id": 801,
+          "name": "Sophie Turner",
+          "gender": "Female",
+          "address": "707 Cedar Street, Uptown",
+          "mobile": "+9988776655",
+          "birth_date": "1988-09-18",
+          "blood_group": "A+",
+          "treatments": [
+            {
+              "id": 1009,
+              "date": "2023-09-10",
+              "diagnosis": "Migraine",
+              "medications": ["Triptans", "Painkillers"],
+              "tests": ["MRI", "Neurological Exam"],
+              "doctor": "Dr. Michael Brown"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2009,
+              "admission_date": "2023-09-09",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Michael Brown",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "ENT (Otolaryngology)",
+      "specialties": ["ENT Surgery", "Hearing Disorders"],
+      "patients": [
+        {
+          "id": 901,
+          "name": "Jackie Foster",
+          "gender": "Non-Binary",
+          "address": "808 Rose Lane, Downtown",
+          "mobile": "+4455667788",
+          "birth_date": "1995-12-22",
+          "blood_group": "AB-",
+          "treatments": [
+            {
+              "id": 1010,
+              "date": "2023-10-05",
+              "diagnosis": "Chronic Sinusitis",
+              "medications": ["Antibiotics", "Nasal Sprays"],
+              "tests": ["CT Scan", "Hearing Test"],
+              "doctor": "Dr. Sophia Miller"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2010,
+              "admission_date": "2023-10-04",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Sophia Miller",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Orthopedics",
+      "specialties": ["Joint Replacement", "Sports Medicine"],
+      "patients": [
+        {
+          "id": 1001,
+          "name": "Liam Brooks",
+          "gender": "Male",
+          "address": "909 Pine Avenue, Suburbia",
+          "mobile": "+5566778899",
+          "birth_date": "1982-06-12",
+          "blood_group": "B+",
+          "treatments": [
+            {
+              "id": 1011,
+              "date": "2023-11-15",
+              "diagnosis": "Knee Injury",
+              "medications": ["Painkillers", "Physical Therapy"],
+              "tests": ["X-ray", "MRI"],
+              "doctor": "Dr. Daniel Clark"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2011,
+              "admission_date": "2023-11-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Daniel Clark",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Urology",
+      "specialties": ["Prostate Disorders", "Kidney Stones"],
+      "patients": [
+        {
+          "id": 1101,
+          "name": "Mia Davis",
+          "gender": "Female",
+          "address": "1010 Maple Drive, Riverside",
+          "mobile": "+2233445566",
+          "birth_date": "1978-02-28",
+          "blood_group": "O+",
+          "treatments": [
+            {
+              "id": 1012,
+              "date": "2023-12-10",
+              "diagnosis": "Urinary Tract Infection",
+              "medications": ["Antibiotics", "Fluid Intake"],
+              "tests": ["Urinalysis", "Ultrasound"],
+              "doctor": "Dr. Olivia Turner"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2012,
+              "admission_date": "2023-12-09",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Olivia Turner",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Psychiatry",
+      "specialties": ["Mood Disorders", "Anxiety Treatment"],
+      "patients": [
+        {
+          "id": 1201,
+          "name": "Noah Taylor",
+          "gender": "Male",
+          "address": "1111 Oak Lane, Uptown",
+          "mobile": "+9988776655",
+          "birth_date": "1985-09-15",
+          "blood_group": "A-",
+          "treatments": [
+            {
+              "id": 1013,
+              "date": "2024-01-05",
+              "diagnosis": "Depression",
+              "medications": ["Antidepressants", "Therapy Sessions"],
+              "tests": ["Psychological Assessment"],
+              "doctor": "Dr. Michael Turner"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2013,
+              "admission_date": "2024-01-04",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Michael Turner",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Oncology",
+      "specialties": ["Chemotherapy", "Cancer Surgery"],
+      "patients": [
+        {
+          "id": 1301,
+          "name": "Ava Wilson",
+          "gender": "Female",
+          "address": "1212 Cedar Street, Downtown",
+          "mobile": "+4455667788",
+          "birth_date": "1972-07-20",
+          "blood_group": "AB+",
+          "treatments": [
+            {
+              "id": 1014,
+              "date": "2024-02-20",
+              "diagnosis": "Breast Cancer",
+              "medications": ["Chemotherapy", "Radiation Therapy"],
+              "tests": ["Mammogram", "Biopsy"],
+              "doctor": "Dr. Sophia Turner"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2014,
+              "admission_date": "2024-02-19",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Sophia Turner",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Dermatology",
+      "specialties": ["Skin Disorders", "Cosmetic Procedures"],
+      "patients": [
+        {
+          "id": 1401,
+          "name": "Elijah Parker",
+          "gender": "Male",
+          "address": "1313 Rose Lane, Suburbia",
+          "mobile": "+5566778899",
+          "birth_date": "1989-03-10",
+          "blood_group": "B-",
+          "treatments": [
+            {
+              "id": 1015,
+              "date": "2024-03-15",
+              "diagnosis": "Acne",
+              "medications": ["Topical Creams", "Dermabrasion"],
+              "tests": ["Skin Examination"],
+              "doctor": "Dr. Daniel Miller"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2015,
+              "admission_date": "2024-03-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Daniel Miller",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Rheumatology",
+      "specialties": ["Arthritis", "Autoimmune Disorders"],
+      "patients": [
+        {
+          "id": 1501,
+          "name": "Isabella Adams",
+          "gender": "Female",
+          "address": "1414 Maple Drive, Riverside",
+          "mobile": "+3344556677",
+          "birth_date": "1980-11-25",
+          "blood_group": "O-",
+          "treatments": [
+            {
+              "id": 1016,
+              "date": "2024-04-05",
+              "diagnosis": "Rheumatoid Arthritis",
+              "medications": [
+                "Disease-Modifying Antirheumatic Drugs",
+                "Physical Therapy"
+              ],
+              "tests": ["Joint X-rays", "Blood Tests"],
+              "doctor": "Dr. Olivia Robinson"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2016,
+              "admission_date": "2024-04-04",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Olivia Robinson",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": 16,
+      "name": "Gastroenterology",
+      "specialties": ["Digestive Disorders", "Endoscopy"],
+      "patients": [
+        {
+          "id": 1601,
+          "name": "William Foster",
+          "gender": "Male",
+          "address": "1515 Oak Lane, Uptown",
+          "mobile": "+9988776655",
+          "birth_date": "1975-09-12",
+          "blood_group": "A+",
+          "treatments": [
+            {
+              "id": 1017,
+              "date": "2024-05-20",
+              "diagnosis": "Gastritis",
+              "medications": ["Antacids", "Dietary Changes"],
+              "tests": ["Upper Endoscopy", "Stool Test"],
+              "doctor": "Dr. Michael Robinson"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2017,
+              "admission_date": "2024-05-19",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Michael Robinson",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Neurology",
+      "specialties": ["Brain Disorders", "Neuroimaging"],
+      "patients": [
+        {
+          "id": 1701,
+          "name": "Sophia Brooks",
+          "gender": "Female",
+          "address": "1616 Pine Avenue, Suburbia",
+          "mobile": "+4455667788",
+          "birth_date": "1988-01-30",
+          "blood_group": "AB-",
+          "treatments": [
+            {
+              "id": 1018,
+              "date": "2024-06-10",
+              "diagnosis": "Migraine",
+              "medications": ["Painkillers", "Lifestyle Changes"],
+              "tests": ["MRI", "CT Scan"],
+              "doctor": "Dr. Sophia Miller"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2018,
+              "admission_date": "2024-06-09",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Sophia Miller",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Hematology",
+      "specialties": ["Blood Disorders", "Bone Marrow Transplant"],
+      "patients": [
+        {
+          "id": 1801,
+          "name": "Jackson Turner",
+          "gender": "Male",
+          "address": "1717 Cedar Street, Downtown",
+          "mobile": "+5566778899",
+          "birth_date": "1979-04-18",
+          "blood_group": "B+",
+          "treatments": [
+            {
+              "id": 1019,
+              "date": "2024-07-15",
+              "diagnosis": "Anemia",
+              "medications": ["Iron Supplements", "Blood Transfusion"],
+              "tests": ["Complete Blood Count", "Bone Marrow Biopsy"],
+              "doctor": "Dr. Jackson Wilson"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2019,
+              "admission_date": "2024-07-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Jackson Wilson",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": 19,
+      "name": "Pulmonology",
+      "specialties": ["Respiratory Disorders", "Pulmonary Function Tests"],
+      "patients": [
+        {
+          "id": 1901,
+          "name": "Olivia Harris",
+          "gender": "Female",
+          "address": "1818 Maple Drive, Riverside",
+          "mobile": "+3344556677",
+          "birth_date": "1983-12-05",
+          "blood_group": "O+",
+          "treatments": [
+            {
+              "id": 1020,
+              "date": "2024-08-20",
+              "diagnosis": "Asthma",
+              "medications": ["Bronchodilators", "Inhaled Corticosteroids"],
+              "tests": ["Pulmonary Function Test", "Chest X-ray"],
+              "doctor": "Dr. Olivia Harris"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2020,
+              "admission_date": "2024-08-19",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Olivia Harris",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Endocrinology",
+      "specialties": ["Hormonal Disorders", "Diabetes Management"],
+      "patients": [
+        {
+          "id": 2001,
+          "name": "Noah Baker",
+          "gender": "Male",
+          "address": "1919 Rose Lane, Suburbia",
+          "mobile": "+9988776655",
+          "birth_date": "1970-06-15",
+          "blood_group": "A-",
+          "treatments": [
+            {
+              "id": 1021,
+              "date": "2024-09-10",
+              "diagnosis": "Type 2 Diabetes",
+              "medications": ["Insulin", "Oral Medications"],
+              "tests": ["Blood Glucose Test", "HbA1c Test"],
+              "doctor": "Dr. Noah Baker"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2021,
+              "admission_date": "2024-09-09",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Noah Baker",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Urology",
+      "specialties": ["Urinary Tract Disorders", "Prostate Health"],
+      "patients": [
+        {
+          "id": 2101,
+          "name": "Emma Taylor",
+          "gender": "Female",
+          "address": "2020 Pine Avenue, Suburbia",
+          "mobile": "+4455667788",
+          "birth_date": "1985-03-25",
+          "blood_group": "AB+",
+          "treatments": [
+            {
+              "id": 1022,
+              "date": "2024-10-15",
+              "diagnosis": "Urinary Tract Infection",
+              "medications": ["Antibiotics", "Fluid Intake"],
+              "tests": ["Urinalysis", "Ultrasound"],
+              "doctor": "Dr. Emma Taylor"
+            }
+          ],
+          "actions": ["Prescription"],
+          "admissions": [
+            {
+              "id": 2022,
+              "admission_date": "2024-10-14",
+              "discharge_date": null,
+              "discharge_reason": null,
+              "consulting_doctor": "Dr. Emma Taylor",
+              "services": ["Room Charge", "Medications", "Tests"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Human Resources",
+      "specialties": ["Employee Recruitment", "Staff Development"],
+      "staff": [
+        {
+          "id": 22,
+          "name": "HR Manager Jennifer Adams",
+          "designation": "HR Manager",
+          "mobile": "+1122334455",
+          "email": "jennifer.adams@example.com",
+          "joining_date": "2024-01-10",
+          "address": "222 Elm Street, Downtown"
+        },
+        {
+          "id": 23,
+          "name": "HR Officer Mark Thompson",
+          "designation": "HR Officer",
+          "mobile": "+2233445566",
+          "email": "mark.thompson@example.com",
+          "joining_date": "2024-02-20",
+          "address": "333 Maple Avenue, Uptown"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Finance",
+      "specialties": ["Budgeting", "Financial Reporting"],
+      "staff": [
+        {
+          "id": 24,
+          "name": "Chief Financial Officer (CFO) Rachel Carter",
+          "designation": "CFO",
+          "mobile": "+3344556677",
+          "email": "rachel.carter@example.com",
+          "joining_date": "2024-03-15",
+          "address": "444 Cedar Road, Suburbia"
+        },
+        {
+          "id": 25,
+          "name": "Financial Analyst David Miller",
+          "designation": "Financial Analyst",
+          "mobile": "+4455667788",
+          "email": "david.miller@example.com",
+          "joining_date": "2024-04-25",
+          "address": "555 Rose Lane, Riverside"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Information Technology (IT)",
+      "specialties": ["Network Security", "System Maintenance"],
+      "staff": [
+        {
+          "id": 26,
+          "name": "IT Manager Brian Turner",
+          "designation": "IT Manager",
+          "mobile": "+5566778899",
+          "email": "brian.turner@example.com",
+          "joining_date": "2024-05-10",
+          "address": "666 Pine Avenue, Metropolis"
+        },
+        {
+          "id": 27,
+          "name": "System Administrator Emily Davis",
+          "designation": "System Administrator",
+          "mobile": "+1122334455",
+          "email": "emily.davis@example.com",
+          "joining_date": "2024-06-20",
+          "address": "777 Maple Drive, Cityville"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Marketing",
+      "specialties": ["Brand Promotion", "Campaign Management"],
+      "staff": [
+        {
+          "id": 28,
+          "name": "Marketing Director Kevin Wilson",
+          "designation": "Marketing Director",
+          "mobile": "+2233445566",
+          "email": "kevin.wilson@example.com",
+          "joining_date": "2024-07-15",
+          "address": "888 Elm Street, Hamletville"
+        },
+        {
+          "id": 29,
+          "name": "Digital Marketing Specialist Megan Harris",
+          "designation": "Digital Marketing Specialist",
+          "mobile": "+3344556677",
+          "email": "megan.harris@example.com",
+          "joining_date": "2024-08-25",
+          "address": "999 Cedar Road, Townsville"
+        }
+      ]
+    }
+  ]
+}
