@@ -1,6 +1,6 @@
 import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Collapse,
@@ -28,6 +28,10 @@ import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
 import AirportShuttleOutlinedIcon from "@mui/icons-material/AirportShuttleOutlined";
 import LocalPharmacyOutlinedIcon from "@mui/icons-material/LocalPharmacyOutlined";
 import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
+import { setButtonValue } from "../redux/slice/buttonSlice";
+import { useDispatch } from "react-redux";
+
+import { useParams } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -44,12 +48,12 @@ const sideMenu = [
     submenus: [
       {
         icon: EditNoteOutlinedIcon,
-        title: "View",
+        title: "View Appointments",
         path: "appointment/viewAppointment",
       },
       {
         icon: EditNoteOutlinedIcon,
-        title: "Book",
+        title: "Book Appointment",
         path: "appointment/bookApointment",
       },
     ],
@@ -100,35 +104,37 @@ const sideMenu = [
 ];
 
 const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
+  const { viewAppointment } = useParams();
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
 
   const [open, setOpen] = React.useState(false);
 
-  const handleNavigate = (path) => {
-    navigate(`/admin/${path}`);
-
-    // if (submenus && submenus.length > 0) {
-    //   handleClick();
-    //   console.log("Clicked menu item has submenus");
-    //   // You can add your logic to handle submenus here
-    // } else {
-    //   console.log("Clicked menu item does not have submenus");
-    //   // Handle the logic for items without submenus
-    // }
-  };
-
-  const handleClick = (path) => {
+  const handleClick = (path, title) => {
     if (submenus && submenus.length > 0) {
       setOpen(!open);
     } else {
       navigate(`/admin/${path}`);
     }
+
+    dispatch(setButtonValue(title));
+
+    console.log(title);
   };
 
   const handleSubMenuClick = (path) => {
     navigate(`/admin/${path}`);
     console.log(path);
   };
+
+  useEffect(() => {
+    // Save the value to the state or perform other actions
+    // For example, if you are using Redux:
+    // dispatch(setViewAppointment(viewAppointment));
+    console.log("View Appointment:", viewAppointment);
+  }, [viewAppointment]);
+
   return (
     <React.Fragment>
       <ListItemButton
@@ -137,7 +143,7 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
             currentPath === `/admin/${path}` ? "#f0f3fb" : "inherit",
           color: currentPath === `/admin/${path}` ? "#000" : "inherit",
         }}
-        onClick={() => handleClick(path)}
+        onClick={() => handleClick(path, title)}
       >
         <ListItemIcon>
           <Icon />

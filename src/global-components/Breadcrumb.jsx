@@ -5,6 +5,8 @@ import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
 import GrainIcon from "@mui/icons-material/Grain";
+import { useDispatch, useSelector } from "react-redux";
+import { setButtonValue } from "../redux/slice/buttonSlice";
 
 function handleClick(event) {
   event.preventDefault();
@@ -12,15 +14,30 @@ function handleClick(event) {
 }
 
 export default function Breadcrumb() {
+    
+    const handleDispatch = () => {
+        const newValue = "Enter a value for the button:";
+       
+  };
+
   return (
-    <div className="mt-12 md:mt-[70px] flex justify-between">
+    <div className="mt-12 md:mt-[70px] md:flex block justify-between">
       <h1 className="breadcrumb-title md:text-2xl md:mb-0 text-lg mb-5">
         Book Appointment
       </h1>
 
-      <div role="presentation" onClick={handleClick}>
-        <Breadcrumbs aria-label="breadcrumb">
+      <div role="presentation">
+        <Breadcrumbs
+          aria-label="breadcrumb"
+          sx={{
+            padding: "15px",
+            borderRadius: "50px",
+            background: "rgba(220, 208, 208, 0.3)",
+            paddingLeft: "20px",
+          }}
+        >
           <Link
+            onClick={handleClick}
             underline="hover"
             sx={{ display: "flex", alignItems: "center" }}
             color="inherit"
@@ -45,6 +62,8 @@ export default function Breadcrumb() {
             <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
             Breadcrumb
           </Typography>
+
+          <button onClick={handleDispatch}>Add Async</button>
         </Breadcrumbs>
       </div>
     </div>
