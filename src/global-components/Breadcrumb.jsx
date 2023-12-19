@@ -3,10 +3,10 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
-import WhatshotIcon from "@mui/icons-material/Whatshot";
 import GrainIcon from "@mui/icons-material/Grain";
-import { useDispatch, useSelector } from "react-redux";
-import { setButtonValue } from "../redux/slice/buttonSlice";
+import { Box } from "@mui/material";
+import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function handleClick(event) {
   event.preventDefault();
@@ -14,16 +14,33 @@ function handleClick(event) {
 }
 
 export default function Breadcrumb() {
-    
-    const handleDispatch = () => {
-        const newValue = "Enter a value for the button:";
-       
-  };
+  const breadcrumbTitle = useSelector((state) => state.breadcrumb.value);
+  const location = useLocation();
+  console.log(breadcrumbTitle);
+
+  // Access the pathname property to get the current pathname
+  const pathname = location.pathname;
+
+  // Split the pathname into an array of segments
+  const pathSegments = pathname.split("/");
+
+  // Find the index of the first non-empty segment after "/admin"
+  const startIndex = pathSegments.indexOf("admin") + 1;
+  const nonEmptySegmentIndex = pathSegments.findIndex(
+    (segment, index) => index >= startIndex && segment !== ""
+  );
+
+  // Extract the path segment dynamically
+  const dynamicPath =
+    nonEmptySegmentIndex !== -1 ? `${pathSegments[nonEmptySegmentIndex]}` : "";
+
+  const formattedDynamicPath =
+    dynamicPath[0].toUpperCase() + dynamicPath.substring(1);
 
   return (
-    <div className="mt-12 md:mt-[70px] md:flex block justify-between">
+    <div className="mt-[48px] md:mt-[70px] mb-[28px] md:flex block justify-between items-center">
       <h1 className="breadcrumb-title md:text-2xl md:mb-0 text-lg mb-5">
-        Book Appointment
+        {breadcrumbTitle !== null ? breadcrumbTitle : formattedDynamicPath}
       </h1>
 
       <div role="presentation">
@@ -36,34 +53,29 @@ export default function Breadcrumb() {
             paddingLeft: "20px",
           }}
         >
-          <Link
-            onClick={handleClick}
-            underline="hover"
-            sx={{ display: "flex", alignItems: "center" }}
-            color="inherit"
-            href="/"
-          >
-            <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            MUI
+          <Link href="/admin/dashboard" color="inherit" underline="hover">
+            <Box
+              underline="hover"
+              sx={{ display: "flex", alignItems: "center" }}
+              color="inherit"
+            >
+              <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+              Home
+            </Box>
           </Link>
-          <Link
-            underline="hover"
-            sx={{ display: "flex", alignItems: "center" }}
-            color="inherit"
-            href="/material-ui/getting-started/installation/"
-          >
-            <WhatshotIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Core
-          </Link>
-          <Typography
-            sx={{ display: "flex", alignItems: "center" }}
-            color="text.primary"
-          >
-            <GrainIcon sx={{ mr: 0.5 }} fontSize="inherit" />
-            Breadcrumb
-          </Typography>
-
-          <button onClick={handleDispatch}>Add Async</button>
+          <Box sx={{ display: "flex", alignItems: "center" }} color="inherit">
+            {dynamicPath}
+          </Box>
+          {breadcrumbTitle !== null ? (
+            <Typography
+              sx={{ display: "flex", alignItems: "center" }}
+              color="text.primary"
+            >
+              {breadcrumbTitle}
+            </Typography>
+          ) : (
+            ""
+          )}
         </Breadcrumbs>
       </div>
     </div>

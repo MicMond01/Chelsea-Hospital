@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import buttonSlice from "./slice/buttonSlice";
+import breadcrumbSlice from "./slice/breadcrumbSlice";
 
 const store = configureStore({
   reducer: {
-    button: buttonSlice,
+    breadcrumb: breadcrumbSlice,
   },
 });
 

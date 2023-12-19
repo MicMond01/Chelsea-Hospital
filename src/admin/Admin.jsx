@@ -1,6 +1,6 @@
 import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Collapse,
@@ -28,10 +28,10 @@ import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
 import AirportShuttleOutlinedIcon from "@mui/icons-material/AirportShuttleOutlined";
 import LocalPharmacyOutlinedIcon from "@mui/icons-material/LocalPharmacyOutlined";
 import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
-import { setButtonValue } from "../redux/slice/buttonSlice";
-import { useDispatch } from "react-redux";
 
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setbreadcrumbtitle } from "../redux/slice/breadcrumbSlice";
 
 const drawerWidth = 240;
 
@@ -49,12 +49,12 @@ const sideMenu = [
       {
         icon: EditNoteOutlinedIcon,
         title: "View Appointments",
-        path: "appointment/viewAppointment",
+        path: "appointment/view/viewAppointment",
       },
       {
         icon: EditNoteOutlinedIcon,
         title: "Book Appointment",
-        path: "appointment/bookApointment",
+        path: "appointment/book/bookApointment",
       },
     ],
   },
@@ -104,7 +104,6 @@ const sideMenu = [
 ];
 
 const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
-  const { viewAppointment } = useParams();
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -116,24 +115,16 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
       setOpen(!open);
     } else {
       navigate(`/admin/${path}`);
+      dispatch(setbreadcrumbtitle(null));
     }
 
-    dispatch(setButtonValue(title));
-
-    console.log(title);
   };
 
-  const handleSubMenuClick = (path) => {
+  const handleSubMenuClick = (path, title) => {
     navigate(`/admin/${path}`);
-    console.log(path);
-  };
+    dispatch(setbreadcrumbtitle(title));
 
-  useEffect(() => {
-    // Save the value to the state or perform other actions
-    // For example, if you are using Redux:
-    // dispatch(setViewAppointment(viewAppointment));
-    console.log("View Appointment:", viewAppointment);
-  }, [viewAppointment]);
+  };
 
   return (
     <React.Fragment>
@@ -156,7 +147,7 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
           {submenus &&
             submenus.map((subItem, index) => (
               <ListItemButton
-                onClick={() => handleSubMenuClick(subItem.path)}
+                onClick={() => handleSubMenuClick(subItem.path, subItem.title)}
                 key={index}
                 sx={{
                   pl: 4,
