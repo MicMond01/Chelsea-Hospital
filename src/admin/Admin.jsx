@@ -110,19 +110,18 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
 
   const [open, setOpen] = React.useState(false);
 
-  const handleClick = (path, title) => {
+  const handleClick = (path) => {
     if (submenus && submenus.length > 0) {
       setOpen(!open);
     } else {
       navigate(`/admin/${path}`);
-      dispatch(setbreadcrumb({ breadcrumbTitle: title }));
-      console.log(title);
     }
   };
 
   const handleSubMenuClick = (path, title) => {
     navigate(`/admin/${path}`);
     dispatch(setbreadcrumb({ breadcrumbTitle: title }));
+    console.log(title);
   };
 
   return (
@@ -133,7 +132,7 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
             currentPath === `/admin/${path}` ? "#f0f3fb" : "inherit",
           color: currentPath === `/admin/${path}` ? "#000" : "inherit",
         }}
-        onClick={() => handleClick(path, title)}
+        onClick={() => handleClick(path)}
       >
         <ListItemIcon>
           <Icon />

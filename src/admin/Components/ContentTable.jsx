@@ -193,7 +193,7 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
-  const breadcrumbTitle = useSelector(
+  const formattedDynamicPath = useSelector(
     (state) => state.breadcrumb.formattedDynamicPath
   );
   const { numSelected } = props;
@@ -228,7 +228,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          {breadcrumbTitle}
+          {formattedDynamicPath}
         </Typography>
       )}
 
@@ -253,11 +253,7 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function ContentTable({
-  responseValue,
-  female_Image,
-  male_Image,
-}) {
+export default function ContentTable({ responseValue }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -371,9 +367,9 @@ export default function ContentTable({
                       />
                     </TableCell>
 
-                    {/* <TableCell align="center">
-                      <Avatar src="" />
-                    </TableCell> */}
+                    <TableCell align="center">
+                      <Avatar src={row.url} alt={row.patient_name} />
+                    </TableCell>
                     <TableCell
                       component="th"
                       id={labelId}

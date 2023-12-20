@@ -9,9 +9,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setbreadcrumb } from "../redux/slice/breadcrumbSlice";
 
 export default function Breadcrumb() {
-  const breadcrumbTitle = useSelector(
-    (state) => state.breadcrumb.breadcrumbTitle
+  const breadcrumbSubMenu = useSelector(
+    (state) => state.breadcrumb.breadcrumbSubMenu
   );
+  console.log(breadcrumbSubMenu);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -20,6 +21,7 @@ export default function Breadcrumb() {
 
   // Split the pathname into an array of segments
   const pathSegments = pathname.split("/");
+  console.log(pathSegments);
 
   // Find the index of the first non-empty segment after "/admin"
   const startIndex = pathSegments.indexOf("admin") + 1;
@@ -39,7 +41,9 @@ export default function Breadcrumb() {
   return (
     <div className="mt-[48px] md:mt-[70px] mb-[28px] md:flex block justify-between items-center">
       <h1 className="breadcrumb-title md:text-2xl md:mb-0 text-lg mb-5">
-        {breadcrumbTitle !== null ? breadcrumbTitle : formattedDynamicPath}
+        {formattedDynamicPath !== null
+          ? formattedDynamicPath
+          : breadcrumbSubMenu}
       </h1>
 
       <div role="presentation">
@@ -65,12 +69,12 @@ export default function Breadcrumb() {
           <Box sx={{ display: "flex", alignItems: "center" }} color="inherit">
             {dynamicPath}
           </Box>
-          {breadcrumbTitle !== null ? (
+          {breadcrumbSubMenu !== null ? (
             <Typography
               sx={{ display: "flex", alignItems: "center" }}
               color="text.primary"
             >
-              {breadcrumbTitle}
+              {breadcrumbSubMenu}
             </Typography>
           ) : (
             ""
