@@ -5,14 +5,15 @@ import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-
-
+import { useDispatch, useSelector } from "react-redux";
+import { setbreadcrumb } from "../redux/slice/breadcrumbSlice";
 
 export default function Breadcrumb() {
-  const breadcrumbTitle = useSelector((state) => state.breadcrumb.value);
+  const breadcrumbTitle = useSelector(
+    (state) => state.breadcrumb.breadcrumbTitle
+  );
+  const dispatch = useDispatch();
   const location = useLocation();
-  console.log(breadcrumbTitle);
 
   // Access the pathname property to get the current pathname
   const pathname = location.pathname;
@@ -32,6 +33,8 @@ export default function Breadcrumb() {
 
   const formattedDynamicPath =
     dynamicPath[0].toUpperCase() + dynamicPath.substring(1);
+
+  dispatch(setbreadcrumb({ formattedDynamicPath: formattedDynamicPath }));
 
   return (
     <div className="mt-[48px] md:mt-[70px] mb-[28px] md:flex block justify-between items-center">

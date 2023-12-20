@@ -21,6 +21,7 @@ import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
+import { useSelector } from "react-redux";
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -82,7 +83,7 @@ const headCells = [
     id: "date",
     numeric: true,
     disablePadding: false,
-    label: "Date of appointment",
+    label: "Date",
   },
   {
     id: "from",
@@ -152,7 +153,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? "right" : "left"}
+            align={headCell.numeric ? "left" : "left"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -185,6 +186,9 @@ EnhancedTableHead.propTypes = {
 };
 
 function EnhancedTableToolbar(props) {
+  const breadcrumbTitle = useSelector(
+    (state) => state.breadcrumb.formattedDynamicPath
+  );
   const { numSelected } = props;
 
   return (
@@ -217,7 +221,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          {breadcrumbTitle}
         </Typography>
       )}
 
@@ -364,13 +368,13 @@ export default function ContentTable({ responseValue }) {
                       {row.patient_name}
                     </TableCell>
                     <TableCell align="left">{row.email}</TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
-                    <TableCell align="right">{row.time_from}</TableCell>
-                    <TableCell align="right">{row.time_to}</TableCell>
-                    <TableCell align="right">{row.mobile}</TableCell>
-                    <TableCell align="right">{row.consulting_doctor}</TableCell>
-                    <TableCell align="right">{row.injury_condition}</TableCell>
-                    <TableCell align="right"></TableCell>
+                    <TableCell align="left">{row.date}</TableCell>
+                    <TableCell align="left">{row.time_from}</TableCell>
+                    <TableCell align="left">{row.time_to}</TableCell>
+                    <TableCell align="left">{row.mobile}</TableCell>
+                    <TableCell align="left">{row.consulting_doctor}</TableCell>
+                    <TableCell align="left">{row.injury_condition}</TableCell>
+                    <TableCell align="left"></TableCell>
                   </TableRow>
                 );
               })}

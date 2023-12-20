@@ -1,0 +1,39 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "title": "Male Image 1",
+      "url": "/avi/imageMale2.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Male Image 2",
+      "url": "/avi/male/imageMale2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Male Image 3",
+      "url": "/avi/male/imageMale3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Male Image 4",
+      "url": "/avi/male/imageMale4.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Male Image 5",
+      "url": "/avi/male/imageMale5.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Male Image 6",
+      "url": "/avi/male/imageMale6.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Male Image 7",
+      "url": "/avi/male/imageMale7.jpg"
+    }
+  ]
+}

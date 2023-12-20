@@ -3,14 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const breadcrumbSlice = createSlice({
   name: "breadcrumb",
   initialState: {
-    value: null,
+    breadcrumbTitle: null,
+    formattedDynamicPath: null,
   },
   reducers: {
-    setbreadcrumbtitle: (state, action) => {
-      state.value = action.payload;
+    setbreadcrumb: (state, action) => {
+      state.breadcrumbTitle = action.payload.breadcrumbTitle;
+      state.formattedDynamicPath = action.payload.formattedDynamicPath;
     },
   },
 });
 
-export const { setbreadcrumbtitle } = breadcrumbSlice.actions;
+export const { setbreadcrumb } = breadcrumbSlice.actions;
 export default breadcrumbSlice.reducer;

@@ -31,7 +31,7 @@ import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
 
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setbreadcrumbtitle } from "../redux/slice/breadcrumbSlice";
+import { setbreadcrumb } from "../redux/slice/breadcrumbSlice";
 
 const drawerWidth = 240;
 
@@ -115,15 +115,14 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
       setOpen(!open);
     } else {
       navigate(`/admin/${path}`);
-      dispatch(setbreadcrumbtitle(null));
+      dispatch(setbreadcrumb({ breadcrumbTitle: title }));
+      console.log(title);
     }
-
   };
 
   const handleSubMenuClick = (path, title) => {
     navigate(`/admin/${path}`);
-    dispatch(setbreadcrumbtitle(title));
-
+    dispatch(setbreadcrumb({ breadcrumbTitle: title }));
   };
 
   return (
