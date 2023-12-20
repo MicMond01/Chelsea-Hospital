@@ -1,42 +1,6 @@
 {
   "appointments": [
     {
-      "id": 501,
-      "patient_name": "John Doe",
-      "email": "johndoe@example.com",
-      "gender": "Male",
-      "date": "2023-01-20",
-      "time_from": "10:00 AM",
-      "time_to": "11:00 AM",
-      "mobile": "+1122334455",
-      "consulting_doctor": "Dr. Alex Johnson",
-      "injury_condition": "Fever"
-    },
-    {
-      "id": 502,
-      "patient_name": "Jane Smith",
-      "email": "janesmith@example.com",
-      "gender": "Female",
-      "date": "2023-02-28",
-      "time_from": "02:30 PM",
-      "time_to": "03:30 PM",
-      "mobile": "+2233445566",
-      "consulting_doctor": "Dr. Sarah Davis",
-      "injury_condition": "Injury"
-    },
-    {
-      "id": 503,
-      "patient_name": "Bob Johnson",
-      "email": "bobjohnson@example.com",
-      "gender": "Male",
-      "date": "2023-03-10",
-      "time_from": "11:00 AM",
-      "time_to": "12:00 PM",
-      "mobile": "+3344556677",
-      "consulting_doctor": "Dr. Emily White",
-      "injury_condition": "Heart Attack"
-    },
-    {
       "id": 504,
       "patient_name": "Jane Smith",
       "email": "janesmith@example.com",

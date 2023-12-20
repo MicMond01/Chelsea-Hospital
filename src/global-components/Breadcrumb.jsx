@@ -3,15 +3,11 @@ import Typography from "@mui/material/Typography";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Link from "@mui/material/Link";
 import HomeIcon from "@mui/icons-material/Home";
-import GrainIcon from "@mui/icons-material/Grain";
 import { Box } from "@mui/material";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
+
 
 export default function Breadcrumb() {
   const breadcrumbTitle = useSelector((state) => state.breadcrumb.value);
