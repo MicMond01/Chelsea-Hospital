@@ -22,6 +22,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { useSelector } from "react-redux";
+import { Avatar } from "@mui/material";
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -68,8 +69,14 @@ function stableSort(array, comparator) {
 
 const headCells = [
   {
-    id: "name",
+    id: "image",
     numeric: false,
+    disablePadding: true,
+    label: "Image",
+  },
+  {
+    id: "name",
+    numeric: true,
     disablePadding: true,
     label: "Name",
   },
@@ -153,7 +160,7 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? "left" : "left"}
+            align={headCell.numeric ? "left" : "center"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
           >
@@ -246,7 +253,11 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function ContentTable({ responseValue }) {
+export default function ContentTable({
+  responseValue,
+  female_Image,
+  male_Image,
+}) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("calories");
   const [selected, setSelected] = React.useState([]);
@@ -359,6 +370,10 @@ export default function ContentTable({ responseValue }) {
                         }}
                       />
                     </TableCell>
+
+                    {/* <TableCell align="center">
+                      <Avatar src="" />
+                    </TableCell> */}
                     <TableCell
                       component="th"
                       id={labelId}

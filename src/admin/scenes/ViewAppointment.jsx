@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Breadcrumb from "../../global-components/Breadcrumb";
 import axios from "axios";
 import ContentTable from "../Components/ContentTable";
+import { Avatar } from "@mui/material";
 
 const ViewAppointment = () => {
   const [responseValue, setResponseValue] = useState(null);
@@ -38,15 +39,22 @@ const ViewAppointment = () => {
     return <p className="mt-[80px]">Loading...</p>;
   }
 
+  const getRandomImage = (gender) => {
+    const filteredImages = aviImage.filter((image) => image.gender === gender);
+    const randomIndex = Math.floor(Math.random() * filteredImages.length);
+    return filteredImages[randomIndex];
+  };
+
+  const randomMaleImage = getRandomImage("male");
+  const randomFemaleImage = getRandomImage("female");
+  
+
   return (
     <div className="">
       <Breadcrumb />
       <ContentTable responseValue={responseValue} />
-
-      {aviImage.map((item, index) => {
-        return <img src={item.url} alt={item.title} key={index} />;
-        // console.log(item.title);
-      })}
+      <Avatar src={randomMaleImage} alt="Male Avatar" />
+      <Avatar src={randomFemaleImage} alt="Female Avatar" />
     </div>
   );
 };

@@ -3,6 +3,8 @@
     {
       "id": 1,
       "name": "Dr. Alex Johnson",
+      "url": "/avi/male/imageMale21.jpg",
+      "gender": "male",
       "department": "Emergency",
       "specialization": "Emergency Medicine",
       "degree": "MD",
@@ -23,6 +25,8 @@
     {
       "id": 2,
       "name": "Dr. Sarah Davis",
+      "url": "/avi/female/imageFemale20.jpg",
+      "gender": "female",
       "department": "Emergency",
       "specialization": "Orthopedics",
       "degree": "DO",
@@ -43,6 +47,8 @@
     {
       "id": 3,
       "name": "Dr. Emily White",
+      "url": "/avi/female/imageFemale21.jpg",
+      "gender": "female",
       "department": "Cardiology",
       "specialization": "Cardiologist",
       "degree": "MD",
@@ -63,6 +69,8 @@
     {
       "id": 4,
       "name": "Dr. Sarah Miller",
+      "url": "/avi/female/imageFemale22.jpg",
+      "gender": "female",
       "department": "Cardiology",
       "specialization": "Cardiologist",
       "degree": "MD",
@@ -83,6 +91,8 @@
     {
       "id": 5,
       "name": "Dr. Michael Turner",
+      "url": "/avi/male/imageMale22.jpg",
+      "gender": "male",
       "department": "Orthopedics",
       "specialization": "Orthopedic Surgeon",
       "degree": "DO",
@@ -103,6 +113,8 @@
     {
       "id": 6,
       "name": "Dr. Jessica White",
+      "url": "/avi/female/imageFemale23.jpg",
+      "gender": "female",
       "department": "Pediatrics",
       "specialization": "Pediatrician",
       "degree": "MD",
@@ -123,6 +135,8 @@
     {
       "id": 7,
       "name": "Dr. Benjamin Harris",
+      "url": "/avi/male/imageMale23.jpg",
+      "gender": "male",
       "department": "Endocrinology",
       "specialization": "Endocrinologist",
       "degree": "MD",
@@ -143,6 +157,8 @@
     {
       "id": 8,
       "name": "Dr. Andrew Clark",
+      "url": "/avi/male/imageMale24.jpg",
+      "gender": "male",
       "department": "Emergency",
       "specialization": "Emergency Medicine",
       "degree": "MD",
@@ -163,6 +179,8 @@
     {
       "id": 9,
       "name": "Dr. Laura Turner",
+      "url": "/avi/female/imageFemale24.jpg",
+      "gender": "female",
       "department": "Emergency",
       "specialization": "Trauma Surgery",
       "degree": "DO",
@@ -183,6 +201,8 @@
     {
       "id": 10,
       "name": "Dr. Christopher Baker",
+      "url": "/avi/male/imageMale25.jpg",
+      "gender": "male",
       "department": "Cardiology",
       "specialization": "Interventional Cardiology",
       "degree": "MD",
@@ -203,6 +223,8 @@
     {
       "id": 11,
       "name": "Dr. Sophia Moore",
+      "url": "/avi/female/imageFemale25.jpg",
+      "gender": "female",
       "department": "Cardiology",
       "specialization": "Heart Failure Specialist",
       "degree": "MD",
@@ -223,6 +245,8 @@
     {
       "id": 12,
       "name": "Dr. Ethan Davis",
+      "url": "/avi/male/imageMale26.jpg",
+      "gender": "male",
       "department": "Orthopedics",
       "specialization": "Sports Medicine",
       "degree": "MD",
@@ -243,6 +267,8 @@
     {
       "id": 13,
       "name": "Dr. Lily Parker",
+      "url": "/avi/female/imageFemale26.jpg",
+      "gender": "female",
       "department": "Orthopedics",
       "specialization": "Joint Replacement",
       "degree": "DO",
@@ -263,6 +289,8 @@
     {
       "id": 14,
       "name": "Dr. Daniel Foster",
+      "url": "/avi/male/imageMale27.jpg",
+      "gender": "male",
       "department": "Pediatrics",
       "specialization": "Neonatology",
       "degree": "MD",
@@ -283,6 +311,8 @@
     {
       "id": 15,
       "name": "Dr. Olivia Wright",
+      "url": "/avi/female/imageFemale27.jpg",
+      "gender": "female",
       "department": "Pediatrics",
       "specialization": "Developmental Pediatrics",
       "degree": "MD",
@@ -303,6 +333,8 @@
     {
       "id": 16,
       "name": "Dr. Noah Taylor",
+      "url": "/avi/male/imageMale28.jpg",
+      "gender": "male",
       "department": "Endocrinology",
       "specialization": "Diabetology",
       "degree": "MD",
@@ -323,6 +355,8 @@
     {
       "id": 17,
       "name": "Dr. Ava Anderson",
+      "url": "/avi/male/imageMale29.jpg",
+      "gender": "male",
       "department": "Endocrinology",
       "specialization": "Thyroid Disorders",
       "degree": "MD",
@@ -344,6 +378,8 @@
     {
       "id": 18,
       "name": "Dr. Mia Martin",
+      "url": "/avi/female/imageFemale28.jpg",
+      "gender": "female",
       "department": "Gynecology",
       "specialization": "Obstetrics",
       "degree": "MD",
@@ -364,6 +400,8 @@
     {
       "id": 19,
       "name": "Dr. Liam Wilson",
+      "url": "/avi/male/imageMale30.jpg",
+      "gender": "male",
       "department": "Gynecology",
       "specialization": "Reproductive Endocrinology",
       "degree": "DO",
@@ -384,6 +422,8 @@
     {
       "id": 20,
       "name": "Dr. Jackson Evans",
+      "url": "/avi/male/imageMale31.jpg",
+      "gender": "male",
       "department": "Ophthalmology",
       "specialization": "Retinal Surgery",
       "degree": "MD",
@@ -404,6 +444,8 @@
     {
       "id": 21,
       "name": "Dr. Aria Parker",
+      "url": "/avi/male/imageMale2.jpg",
+      "gender": "male",
       "department": "Ophthalmology",
       "specialization": "Corneal Diseases",
       "degree": "MD",
@@ -424,6 +466,8 @@
     {
       "id": 22,
       "name": "Dr. Elijah Harris",
+      "url": "/avi/male/imageMale3.jpg",
+      "gender": "male",
       "department": "Dermatology",
       "specialization": "Cosmetic Dermatology",
       "degree": "MD",
@@ -444,6 +488,8 @@
     {
       "id": 23,
       "name": "Dr. Grace Turner",
+      "url": "/avi/female/imageFemale29.jpg",
+      "gender": "female",
       "department": "Dermatology",
       "specialization": "Mohs Surgery",
       "degree": "DO",
@@ -464,6 +510,8 @@
     {
       "id": 24,
       "name": "Dr. Noah Taylor",
+      "url": "/avi/male/imageMale4.jpg",
+      "gender": "male",
       "department": "Neurology",
       "specialization": "Epilepsy Specialist",
       "degree": "MD",
@@ -484,6 +532,8 @@
     {
       "id": 25,
       "name": "Dr. Ava Anderson",
+      "url": "/avi/male/imageMale5.jpg",
+      "gender": "male",
       "department": "Neurology",
       "specialization": "Movement Disorders",
       "degree": "MD",
@@ -504,6 +554,8 @@
     {
       "id": 26,
       "name": "Dr. Ethan Foster",
+      "url": "/avi/male/imageMale6.jpg",
+      "gender": "male",
       "department": "Orthopedics",
       "specialization": "Sports Medicine",
       "degree": "MD",
@@ -524,6 +576,8 @@
     {
       "id": 27,
       "name": "Dr. Olivia Wright",
+      "url": "/avi/female/imageFemale30.jpg",
+      "gender": "female",
       "department": "Orthopedics",
       "specialization": "Joint Replacement",
       "degree": "DO",
@@ -544,6 +598,8 @@
     {
       "id": 28,
       "name": "Dr. Elijah Turner",
+      "url": "/avi/male/imageMale7.jpg",
+      "gender": "male",
       "department": "ENT",
       "specialization": "Rhinosinusitis Specialist",
       "degree": "MD",
@@ -564,6 +620,8 @@
     {
       "id": 29,
       "name": "Dr. Lily Parker",
+      "url": "/avi/female/imageFemale32.jpg",
+      "gender": "female",
       "department": "ENT",
       "specialization": "Head and Neck Surgery",
       "degree": "MD",
@@ -584,6 +642,8 @@
     {
       "id": 30,
       "name": "Dr. Daniel Foster",
+      "url": "/avi/male/imageMale8.jpg",
+      "gender": "male",
       "department": "Psychiatry",
       "specialization": "Child and Adolescent Psychiatry",
       "degree": "MD",
@@ -604,6 +664,8 @@
     {
       "id": 31,
       "name": "Dr. Sophia Taylor",
+      "url": "/avi/female/imageFemale33.jpg",
+      "gender": "female",
       "department": "Psychiatry",
       "specialization": "Addiction Psychiatry",
       "degree": "DO",
@@ -625,6 +687,8 @@
     {
       "id": 32,
       "name": "Dr. Nathan Adams",
+      "url": "/avi/male/imageMale9.jpg",
+      "gender": "male",
       "department": "Cardiology",
       "specialization": "Interventional Cardiology",
       "degree": "MD",
@@ -634,7 +698,7 @@
       "appointments": [
         {
           "id": 532,
-          "patient_name": "Ethan Turner",
+          "patient_name": "Ethan C. Turner",
           "date": "2024-08-05",
           "time_from": "02:00 PM",
           "time_to": "03:00 PM",
@@ -645,6 +709,8 @@
     {
       "id": 33,
       "name": "Dr. Zoe Carter",
+      "url": "/avi/female/imageFemale1.jpg",
+      "gender": "female",
       "department": "Cardiology",
       "specialization": "Electrophysiology",
       "degree": "DO",
@@ -665,6 +731,8 @@
     {
       "id": 34,
       "name": "Dr. Samuel Evans",
+      "url": "/avi/male/imageMale10.jpg",
+      "gender": "male",
       "department": "Ophthalmology",
       "specialization": "Retina Specialist",
       "degree": "MD",
@@ -685,6 +753,8 @@
     {
       "id": 35,
       "name": "Dr. Stella White",
+      "url": "/avi/female/imageFemale2.jpg",
+      "gender": "female",
       "department": "Ophthalmology",
       "specialization": "Cornea and External Diseases",
       "degree": "MD",
@@ -705,6 +775,8 @@
     {
       "id": 36,
       "name": "Dr. Christopher Brown",
+      "url": "/avi/male/imageMale11.jpg",
+      "gender": "male",
       "department": "Dermatology",
       "specialization": "Cosmetic Dermatology",
       "degree": "MD",
@@ -725,6 +797,8 @@
     {
       "id": 37,
       "name": "Dr. Aria Foster",
+      "url": "/avi/male/imageMale12.jpg",
+      "gender": "male",
       "department": "Dermatology",
       "specialization": "Pediatric Dermatology",
       "degree": "DO",
@@ -745,6 +819,8 @@
     {
       "id": 38,
       "name": "Dr. Ethan Turner",
+      "url": "/avi/female/imageFemale3.jpg",
+      "gender": "female",
       "department": "Emergency",
       "specialization": "Trauma Surgery",
       "degree": "MD",
@@ -765,6 +841,8 @@
     {
       "id": 39,
       "name": "Dr. Mia Parker",
+      "url": "/avi/female/imageFemale4.jpg",
+      "gender": "female",
       "department": "Emergency",
       "specialization": "Emergency Medicine",
       "degree": "DO",
@@ -785,6 +863,8 @@
     {
       "id": 40,
       "name": "Dr. Olivia Adams",
+      "url": "/avi/female/imageFemale5.jpg",
+      "gender": "female",
       "department": "Orthopedics",
       "specialization": "Sports Medicine",
       "degree": "MD",
@@ -794,7 +874,7 @@
       "appointments": [
         {
           "id": 540,
-          "patient_name": "Ethan Turner",
+          "patient_name": "Ethan A. Turner",
           "date": "2025-04-05",
           "time_from": "01:00 PM",
           "time_to": "02:00 PM",
@@ -805,6 +885,8 @@
     {
       "id": 41,
       "name": "Dr. Noah White",
+      "url": "/avi/male/imageMale13.jpg",
+      "gender": "male",
       "department": "Orthopedics",
       "specialization": "Joint Replacement",
       "degree": "MD",
@@ -825,6 +907,8 @@
     {
       "id": 42,
       "name": "Dr. Leo Carter",
+      "url": "/avi/male/imageMale14.jpg",
+      "gender": "male",
       "department": "Gynecology",
       "specialization": "Obstetrics",
       "degree": "MD",
@@ -834,7 +918,7 @@
       "appointments": [
         {
           "id": 542,
-          "patient_name": "Aria Foster",
+          "patient_name": "Aria A. Foster",
           "date": "2025-06-05",
           "time_from": "11:30 AM",
           "time_to": "12:30 PM",
@@ -845,6 +929,8 @@
     {
       "id": 43,
       "name": "Dr. Luna Adams",
+      "url": "/avi/female/imageFemale6.jpg",
+      "gender": "female",
       "department": "Gynecology",
       "specialization": "Reproductive Endocrinology",
       "degree": "DO",
