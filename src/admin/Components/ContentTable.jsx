@@ -16,13 +16,13 @@ import Paper from "@mui/material/Paper";
 import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 import { useSelector } from "react-redux";
 import { Avatar } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
 function createData(id, name, calories, fat, carbs, protein) {
   return {
@@ -87,6 +87,12 @@ const headCells = [
     label: "Email",
   },
   {
+    id: "gender",
+    numeric: true,
+    disablePadding: false,
+    label: "Gender",
+  },
+  {
     id: "date",
     numeric: true,
     disablePadding: false,
@@ -97,12 +103,6 @@ const headCells = [
     numeric: true,
     disablePadding: false,
     label: "From",
-  },
-  {
-    id: "to",
-    numeric: true,
-    disablePadding: false,
-    label: "to",
   },
   {
     id: "mobile",
@@ -163,6 +163,7 @@ function EnhancedTableHead(props) {
             align={headCell.numeric ? "left" : "center"}
             padding={headCell.disablePadding ? "none" : "normal"}
             sortDirection={orderBy === headCell.id ? order : false}
+            sx={{ fontWeight: 700 }}
           >
             <TableSortLabel
               active={orderBy === headCell.id}
@@ -223,7 +224,7 @@ function EnhancedTableToolbar(props) {
         </Typography>
       ) : (
         <Typography
-          sx={{ flex: "1 1 100%" }}
+          sx={{ flex: "1 1 100%", fontWeight: 700 }}
           variant="h6"
           id="tableTitle"
           component="div"
@@ -371,6 +372,7 @@ export default function ContentTable({ responseValue }) {
                       <Avatar src={row.url} alt={row.patient_name} />
                     </TableCell>
                     <TableCell
+                      style={{ width: 160 }}
                       component="th"
                       id={labelId}
                       scope="row"
@@ -379,13 +381,62 @@ export default function ContentTable({ responseValue }) {
                       {row.patient_name}
                     </TableCell>
                     <TableCell align="left">{row.email}</TableCell>
+                    <TableCell
+                      align="left"
+                      sx={{
+                        fontWeight: 600,
+                        color: row.gender === "Male" ? "#198754" : "#6f42c1",
+                      }}
+                    >
+                      <span
+                        style={{
+                          borderRadius: "5px",
+                          padding: "5px 12px",
+                          background:
+                            row.gender === "Male" ? "#19875426" : "#6f42c126",
+                        }}
+                      >
+                        {row.gender}
+                      </span>
+                    </TableCell>
                     <TableCell align="left">{row.date}</TableCell>
                     <TableCell align="left">{row.time_from}</TableCell>
-                    <TableCell align="left">{row.time_to}</TableCell>
                     <TableCell align="left">{row.mobile}</TableCell>
-                    <TableCell align="left">{row.consulting_doctor}</TableCell>
+                    <TableCell align="left" style={{ width: 150 }}>
+                      {row.consulting_doctor}
+                    </TableCell>
                     <TableCell align="left">{row.injury_condition}</TableCell>
-                    <TableCell align="left"></TableCell>
+                    <TableCell align="left">
+                      <IconButton
+                        sx={{
+                          backgroundColor: "rgba(0, 255, 10, 0.2)",
+                          color: "#4caf50",
+                          padding: "8px",
+                          marginRight: "0.5rem",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <EditIcon
+                          sx={{
+                            fontSize: "15px",
+                          }}
+                        />
+                      </IconButton>
+                      <IconButton
+                        sx={{
+                          backgroundColor: "rgba(255, 68, 0, 0.2)",
+                          color: "#fa6c39",
+                          padding: "8px",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        <DeleteOutlineOutlinedIcon
+                          sx={{
+                            fontSize: "15px",
+                          }}
+                        />
+                      </IconButton>
+                    </TableCell>
                   </TableRow>
                 );
               })}
@@ -411,10 +462,6 @@ export default function ContentTable({ responseValue }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
     </Box>
   );
 }
