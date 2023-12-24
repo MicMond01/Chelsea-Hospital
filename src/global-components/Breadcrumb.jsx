@@ -36,7 +36,9 @@ export default function Breadcrumb() {
   const formattedDynamicPath =
     dynamicPath[0].toUpperCase() + dynamicPath.substring(1);
 
-  dispatch(setbreadcrumb({ formattedDynamicPath: formattedDynamicPath }));
+  React.useEffect(() => {
+    dispatch(setbreadcrumb({ formattedDynamicPath: formattedDynamicPath }));
+  }, [dispatch, formattedDynamicPath]);
 
   return (
     <div className="mt-[48px] md:mt-[70px] mb-[28px] md:flex block justify-between items-center">

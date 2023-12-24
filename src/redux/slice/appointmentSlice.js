@@ -11,24 +11,16 @@ const apiDataSlice = createSlice({
   reducers: {
     setItems: (state, action) => {
       state.items = action.payload;
+      state.loading = false;
     },
     setSelectedItemId: (state, action) => {
       state.selectedItemId = action.payload;
     },
+    isLoading: (state, action) => {
+      state.loading = action.payload;
+    },
   },
 });
 
-export const { setItems, setSelectedItemId } = apiDataSlice.actions;
-
-// Async action to fetch API data
-export const fetchApiData = () => async (dispatch) => {
-  try {
-    const response = await axios.get("/api/appointments.json"); // Replace with your actual API endpoint
-    console.log(response?.data.appointments);
-  } catch (error) {
-    // Handle error
-    console.error("Error fetching API data:", error);
-  }
-};
-
+export const { setItems, setSelectedItemId, isLoading } = apiDataSlice.actions;
 export default apiDataSlice.reducer;
