@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 const ViewAppointment = () => {
   const dispatch = useDispatch();
   const responseValue = useSelector((state) => state.appointmentList.items);
+  const loading = useSelector((state) => state.appointmentList.loading);
 
   const fetchData = async () => {
     try {
@@ -25,16 +26,16 @@ const ViewAppointment = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
-
-  // if (isLoading) {
-  //   return <p className="mt-[80px]">Loading...</p>;
-  // }
+  }, [dispatch]);
 
   return (
     <div className="">
-      <Breadcrumb />
-      <ContentTable responseValue={responseValue} />
+      <Breadcrumb />{" "}
+      {loading ? (
+        <p className="mt-[80px]">Loading...</p>
+      ) : (
+        <ContentTable responseValue={responseValue} />
+      )}
     </div>
   );
 };
