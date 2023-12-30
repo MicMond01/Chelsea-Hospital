@@ -15,6 +15,7 @@ const apiDataSlice = createSlice({
     },
     setSelectedItemId: (state, action) => {
       state.selectedItemId = action.payload;
+      // console.log(action);
     },
     isLoading: (state, action) => {
       state.loading = action.payload;

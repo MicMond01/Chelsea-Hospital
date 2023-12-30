@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { alpha } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -13,27 +12,17 @@ import TableSortLabel from "@mui/material/TableSortLabel";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
-import Checkbox from "@mui/material/Checkbox";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
-import DeleteIcon from "@mui/icons-material/Delete";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Avatar } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-
-function createData(id, name, calories, fat, carbs, protein) {
-  return {
-    id,
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-  };
-}
+import { setItems } from "../../redux/slice/appointmentSlice";
+import DeleteDialog from "./popup/DeleteDialog";
+import EditDialog from "./popup/EditDialog";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -205,19 +194,21 @@ function EnhancedTableToolbar(props) {
 export default function ContentTable({ responseValue }) {
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("name");
-  const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
-  const [dense, setDense] = React.useState(true);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [openModal, setOpenModal] = React.useState(false);
+  const [openEditModal, setOpenEditModal] = React.useState(false);
+  const [itemToDelete, setItemToDelete] = React.useState(null);
+
+  const tableItem = useSelector((state) => state.appointmentList.items);
+  console.log(tableItem);
+
+  const dispatch = useDispatch();
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
-  };
-
-  const handleClick = (event, id) => {
-    console.log(id);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -229,50 +220,51 @@ export default function ContentTable({ responseValue }) {
     setPage(0);
   };
 
-  const handleChangeDense = (event) => {
-    setDense(event.target.checked);
-  };
-
-  const isSelected = (id) => selected.indexOf(id) !== -1;
-
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - responseValue.length) : 0;
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - tableItem.length) : 0;
 
   const visibleRows = React.useMemo(
     () =>
-      stableSort(responseValue, getComparator(order, orderBy)).slice(
+      stableSort(tableItem, getComparator(order, orderBy)).slice(
         page * rowsPerPage,
         page * rowsPerPage + rowsPerPage
       ),
-    [order, orderBy, page, rowsPerPage]
+    [order, orderBy, page, rowsPerPage, tableItem]
   );
+
+  const deleteConfirmation = () => {
+    const updatedItems = responseValue.filter(
+      (item) => item.id !== itemToDelete
+    );
+    dispatch(setItems(updatedItems));
+    console.log(itemToDelete);
+    setOpenModal(false);
+  };
 
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} />
+        <EnhancedTableToolbar />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? "small" : "medium"}
+            size={"small"}
           >
             <EnhancedTableHead
-              numSelected={selected.length}
               order={order}
               orderBy={orderBy}
               onRequestSort={handleRequestSort}
             />
             <TableBody>
               {visibleRows.map((row, index) => {
-                const isItemSelected = isSelected(row.id);
                 const labelId = `enhanced-table-checkbox-${index}`;
 
                 return (
                   <TableRow
                     hover
-                    onClick={(event) => handleClick(event, row.id)}
+                    onClick={() => setItemToDelete(row.id)}
                     tabIndex={-1}
                     key={row.id}
                     sx={{ cursor: "pointer" }}
@@ -317,6 +309,7 @@ export default function ContentTable({ responseValue }) {
                     <TableCell align="left">{row.injury_condition}</TableCell>
                     <TableCell align="left">
                       <IconButton
+                        onClick={() => setOpenEditModal(true)}
                         sx={{
                           backgroundColor: "rgba(0, 255, 10, 0.2)",
                           color: "#4caf50",
@@ -338,6 +331,7 @@ export default function ContentTable({ responseValue }) {
                           padding: "8px",
                           borderRadius: "5px",
                         }}
+                        onClick={() => setOpenModal(true)}
                       >
                         <DeleteOutlineOutlinedIcon
                           sx={{
@@ -352,7 +346,7 @@ export default function ContentTable({ responseValue }) {
               {emptyRows > 0 && (
                 <TableRow
                   style={{
-                    height: (dense ? 33 : 53) * emptyRows,
+                    height: 33 * emptyRows,
                   }}
                 >
                   <TableCell colSpan={6} />
@@ -371,6 +365,21 @@ export default function ContentTable({ responseValue }) {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
+
+      {openEditModal && (
+        <EditDialog
+          openEditModal={openEditModal}
+          setOpenEditModal={setOpenEditModal}
+        />
+      )}
+
+      {openModal && (
+        <DeleteDialog
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          deleteConfirmation={deleteConfirmation}
+        />
+      )}
     </Box>
   );
 }

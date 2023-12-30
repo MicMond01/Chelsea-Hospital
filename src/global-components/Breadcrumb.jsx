@@ -12,7 +12,6 @@ export default function Breadcrumb() {
   const breadcrumbSubMenu = useSelector(
     (state) => state.breadcrumb.breadcrumbSubMenu
   );
-  console.log(breadcrumbSubMenu);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -21,7 +20,6 @@ export default function Breadcrumb() {
 
   // Split the pathname into an array of segments
   const pathSegments = pathname.split("/");
-  console.log(pathSegments);
 
   // Find the index of the first non-empty segment after "/admin"
   const startIndex = pathSegments.indexOf("admin") + 1;
