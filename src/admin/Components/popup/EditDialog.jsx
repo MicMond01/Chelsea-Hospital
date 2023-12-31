@@ -1,9 +1,8 @@
 import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 const EditDialog = ({ openEditModal, setOpenEditModal }) => {
-  const emailInputRef = useRef < HTMLInputElement > null;
-
+  const emailInputRef = useRef(null);
   return (
     <>
       <Button onClick={() => setOpenEditModal(true)}>Toggle modal</Button>
@@ -25,7 +24,7 @@ const EditDialog = ({ openEditModal, setOpenEditModal }) => {
                 <Label htmlFor="email" value="Your email" />
               </div>
               <TextInput
-                id="email" 
+                id="email"
                 ref={emailInputRef}
                 placeholder="name@company.com"
                 required
@@ -39,7 +38,7 @@ const EditDialog = ({ openEditModal, setOpenEditModal }) => {
             </div>
             <div className="flex justify-between">
               <div className="flex items-center gap-2">
-                <Checkbox id="remember" /> 
+                <Checkbox id="remember" />
                 <Label htmlFor="remember">Remember me</Label>
               </div>
               <a
