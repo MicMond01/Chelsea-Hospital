@@ -20,9 +20,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { Avatar } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { setItems } from "../../redux/slice/appointmentSlice";
+import {
+  setItems,
+  setSelectedItemId,
+} from "../../redux/slice/appointmentSlice";
 import DeleteDialog from "./popup/DeleteDialog";
 import EditDialog from "./popup/EditDialog";
+import CustomTextInput from "./Models/CustomTextInput";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -199,6 +203,7 @@ export default function ContentTable({ responseValue }) {
   const [openModal, setOpenModal] = React.useState(false);
   const [openEditModal, setOpenEditModal] = React.useState(false);
   const [itemToDelete, setItemToDelete] = React.useState(null);
+  const [editingItem, setEditingItem] = React.useState(null);
 
   const tableItem = useSelector((state) => state.appointmentList.items);
   console.log(tableItem);
@@ -240,6 +245,15 @@ export default function ContentTable({ responseValue }) {
     dispatch(setItems(updatedItems));
     console.log(itemToDelete);
     setOpenModal(false);
+  };
+
+  const editAppointmentRecord = (id) => {
+    const selectedItem = responseValue.find((item) => item.id === id);
+    console.log(selectedItem);
+    setEditingItem(selectedItem);
+    dispatch(setSelectedItemId(id));
+
+    setOpenEditModal(true);
   };
 
   return (
@@ -309,7 +323,7 @@ export default function ContentTable({ responseValue }) {
                     <TableCell align="left">{row.injury_condition}</TableCell>
                     <TableCell align="left">
                       <IconButton
-                        onClick={() => setOpenEditModal(true)}
+                        onClick={() => editAppointmentRecord(row.id)}
                         sx={{
                           backgroundColor: "rgba(0, 255, 10, 0.2)",
                           color: "#4caf50",
