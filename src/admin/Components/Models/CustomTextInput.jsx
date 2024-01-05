@@ -82,12 +82,12 @@ const CustomTextInput = ({ inputLabel, inputIcon, inputValue }) => {
 
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
-      <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
+      <FormControl sx={{ m: 1,  }} variant="outlined">
         <TextField
           required
           label={inputLabel}
           id="outlined-end-adornment"
-          sx={{ m: 1, width: "25ch" }}
+          sx={{ width: "28.5ch" }}
           defaultValue={inputValue}
           InputProps={{
             endAdornment: (

@@ -54,3 +54,7 @@ select:focus {
   margin: 0 0 15px;
   font-weight: 600;
 }
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+  top: 5px !important;
+}

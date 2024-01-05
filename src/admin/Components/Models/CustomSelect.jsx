@@ -85,7 +85,7 @@ const CustomSelect = ({ doctor, inputValue, inputLabel }) => {
       <Box
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
+          "& .MuiTextField-root": { m: 1 },
         }}
         noValidate
         autoComplete="off"
@@ -97,6 +97,13 @@ const CustomSelect = ({ doctor, inputValue, inputLabel }) => {
             label={inputLabel}
             defaultValue={doctor}
             helperText="Please select a Doctor"
+            sx={{
+              width: "28.5ch",
+              maxWidth: "100%",
+              "@media (max-width:400px)": {
+                width: "26.5ch",
+              },
+            }}
           >
             {inputValue.map((option, index) => (
               <MenuItem key={index} value={option}>

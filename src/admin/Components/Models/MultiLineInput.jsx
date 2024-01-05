@@ -94,6 +94,7 @@ const MultiLineInput = ({ inputLabel, inputValue }) => {
             id="outlined-multiline-static"
             label={inputLabel}
             multiline
+            fullWidth
             maxRows={4}
             defaultValue={inputValue}
           />

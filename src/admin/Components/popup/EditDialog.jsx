@@ -31,10 +31,10 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
     <React.Fragment>
       <Button onClick={() => setOpenEditModal(true)}>Toggle modal</Button>
       <Dialog
-        sx={{ maxWidth: 220 }}
         open={openEditModal}
         onClose={() => setOpenEditModal(false)}
         aria-labelledby="responsive-dialog-title"
+        maxWidth="lg"
       >
         <div className="mx-6 mt-4">
           <div className="flex gap-3 items-center">
@@ -42,61 +42,58 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <Typography variant="h6">{editingItem.patient_name}</Typography>
           </div>
         </div>
+        <DialogContent>
+          <div className="sm:flex gap-4 block">
+            <CustomTextInput
+              inputLabel={"Name"}
+              inputIcon={Face6Icon}
+              inputValue={editingItem.patient_name}
+            />
+            <CustomTextInput
+              inputLabel={"Email"}
+              inputIcon={MarkunreadIcon}
+              inputValue={editingItem.email}
+            />
+          </div>
 
-        <div className=" my-6">
-          <DialogContent>
-            <div className="flex gap-4">
-              <CustomTextInput
-                inputLabel={"Name"}
-                inputIcon={Face6Icon}
-                inputValue={editingItem.patient_name}
-              />
-              <CustomTextInput
-                inputLabel={"Email"}
-                inputIcon={MarkunreadIcon}
-                inputValue={editingItem.email}
-              />
-            </div>
+          <div className="flex ml-5">
+            <RadioButton radioValue={editingItem.gender} />
+          </div>
 
-            <div className="flex ml-5">
-              <RadioButton radioValue={editingItem.gender} />
-            </div>
+          <div className="sm:flex gap-4 block">
+            <CustomTextInput
+              inputLabel={"Choose a Date"}
+              inputIcon={EventIcon}
+              inputValue={editingItem.date}
+            />
+            <CustomTextInput
+              inputLabel={"Time"}
+              inputIcon={WatchLaterIcon}
+              inputValue={editingItem.time_from}
+            />
+          </div>
 
-            <div className="flex gap-4">
-              <CustomTextInput
-                inputLabel={"Choose a Date"}
-                inputIcon={EventIcon}
-                inputValue={editingItem.date}
-              />
-              <CustomTextInput
-                inputLabel={"Time"}
-                inputIcon={WatchLaterIcon}
-                inputValue={editingItem.time_from}
-              />
-            </div>
+          <div className="sm:flex gap-4 block">
+            <CustomTextInput
+              inputLabel={"Mobile"}
+              inputIcon={PhoneEnabledIcon}
+              inputValue={editingItem.mobile}
+            />
 
-            <div className="flex gap-4">
-              <CustomTextInput
-                inputLabel={"Mobile"}
-                inputIcon={PhoneEnabledIcon}
-                inputValue={editingItem.mobile}
-              />
+            <CustomSelect
+              inputLabel={"Doctor"}
+              doctor={editingItem.consulting_doctor}
+              inputValue={consultingDoctors}
+            />
+          </div>
 
-              <CustomSelect
-                inputLabel={"Doctor"}
-                doctor={editingItem.consulting_doctor}
-                inputValue={consultingDoctors}
-              />
-            </div>
-
-            <div className="flex gap-4">
-              <MultiLineInput
-                inputLabel={"Injury/Condition"}
-                inputValue={editingItem.injury_condition}
-              />
-            </div>
-          </DialogContent>
-        </div>
+          <div className="sm:flex gap-4 block">
+            <MultiLineInput
+              inputLabel={"Injury/Condition"}
+              inputValue={editingItem.injury_condition}
+            />
+          </div>
+        </DialogContent>
       </Dialog>
     </React.Fragment>
   );
