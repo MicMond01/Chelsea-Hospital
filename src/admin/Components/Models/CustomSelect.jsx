@@ -101,7 +101,7 @@ const CustomSelect = ({ doctor, inputValue, inputLabel }) => {
               width: "28.5ch",
               maxWidth: "100%",
               "@media (max-width:400px)": {
-                width: "26.5ch",
+                width: "25ch",
               },
             }}
           >

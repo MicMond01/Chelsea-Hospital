@@ -94,6 +94,11 @@ const MultiLineInput = ({ inputLabel, inputValue }) => {
             id="outlined-multiline-static"
             label={inputLabel}
             multiline
+            sx={{
+              "@media (max-width:400px)": {
+                width: "25ch",
+              },
+            }}
             fullWidth
             maxRows={4}
             defaultValue={inputValue}

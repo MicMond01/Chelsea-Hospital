@@ -5,9 +5,8 @@ import {
   Avatar,
   Dialog,
   DialogContent,
+  Stack,
   Typography,
-  useMediaQuery,
-  useTheme,
 } from "@mui/material";
 import MarkunreadIcon from "@mui/icons-material/Markunread";
 import RadioButton from "../Models/RadioButton";
@@ -93,6 +92,17 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
               inputValue={editingItem.injury_condition}
             />
           </div>
+
+          <Stack spacing={2} direction="row" sx={{ ml: "0.8rem", mt: "2rem" }}>
+            <Button variant="contained">Save</Button>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={() => setOpenEditModal(false)}
+            >
+              Cancle
+            </Button>
+          </Stack>
         </DialogContent>
       </Dialog>
     </React.Fragment>
