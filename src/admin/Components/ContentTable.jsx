@@ -206,7 +206,7 @@ export default function ContentTable({ responseValue }) {
   const [editingItem, setEditingItem] = React.useState(null);
 
   const tableItem = useSelector((state) => state.appointmentList.items);
-  console.log(tableItem);
+  // console.log(tableItem);
 
   const dispatch = useDispatch();
 
@@ -384,6 +384,7 @@ export default function ContentTable({ responseValue }) {
         <EditDialog
           openEditModal={openEditModal}
           setOpenEditModal={setOpenEditModal}
+          editingItem={editingItem}
         />
       )}
 

@@ -78,16 +78,18 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({ inputLabel, inputIcon }) => {
+const CustomTextInput = ({ inputLabel, inputIcon, inputValue }) => {
   const outerTheme = useTheme();
 
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
       <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
         <TextField
+          required
           label={inputLabel}
           id="outlined-end-adornment"
           sx={{ m: 1, width: "25ch" }}
+          defaultValue={inputValue}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
