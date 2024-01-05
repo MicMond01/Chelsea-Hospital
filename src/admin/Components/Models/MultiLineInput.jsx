@@ -1,13 +1,12 @@
+import * as React from "react";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 import {
-  InputAdornment,
-  FormControl,
   ThemeProvider,
-  TextField,
-  outlinedInputClasses,
   createTheme,
+  outlinedInputClasses,
   useTheme,
 } from "@mui/material";
-import React from "react";
 
 const customTheme = (outerTheme) =>
   createTheme({
@@ -77,29 +76,31 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({ inputLabel, inputIcon, inputValue }) => {
+const MultiLineInput = ({ inputLabel, inputValue }) => {
   const outerTheme = useTheme();
 
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
-      <FormControl sx={{ m: 1, width: "25ch" }} variant="outlined">
-        <TextField
-          required
-          label={inputLabel}
-          id="outlined-end-adornment"
-          sx={{ m: 1, width: "25ch" }}
-          defaultValue={inputValue}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment sx={{ height: "2em" }} position="end">
-                {inputIcon && React.createElement(inputIcon)}
-              </InputAdornment>
-            ),
-          }}
-        />
-      </FormControl>
+      <Box
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { m: 1 },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <div>
+          <TextField
+            id="outlined-multiline-static"
+            label={inputLabel}
+            multiline
+            maxRows={4}
+            defaultValue={inputValue}
+          />
+        </div>
+      </Box>
     </ThemeProvider>
   );
 };
 
-export default CustomTextInput;
+export default MultiLineInput;

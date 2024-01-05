@@ -26,7 +26,6 @@ import {
 } from "../../redux/slice/appointmentSlice";
 import DeleteDialog from "./popup/DeleteDialog";
 import EditDialog from "./popup/EditDialog";
-import CustomTextInput from "./Models/CustomTextInput";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {

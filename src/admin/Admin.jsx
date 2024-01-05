@@ -258,7 +258,6 @@ function Admin(props) {
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           backgroundColor: "#f0f3fb",
-          height: "100vh",
         }}
       >
         {/* <Toolbar /> */}
