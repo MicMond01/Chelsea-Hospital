@@ -77,7 +77,12 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomSelect = ({ doctor, inputValue, inputLabel }) => {
+const CustomSelect = ({
+  doctor,
+  inputValue,
+  inputLabel,
+  handleChangeValue,
+}) => {
   const outerTheme = useTheme();
 
   return (
@@ -96,6 +101,7 @@ const CustomSelect = ({ doctor, inputValue, inputLabel }) => {
             select
             label={inputLabel}
             defaultValue={doctor}
+            onChange={handleChangeValue}
             helperText="Please select a Doctor"
             sx={{
               width: "28.5ch",

@@ -76,7 +76,7 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const MultiLineInput = ({ inputLabel, inputValue }) => {
+const MultiLineInput = ({ inputLabel, inputValue, handleChangeValue }) => {
   const outerTheme = useTheme();
 
   return (
@@ -94,6 +94,7 @@ const MultiLineInput = ({ inputLabel, inputValue }) => {
             id="outlined-multiline-static"
             label={inputLabel}
             multiline
+            onChange={handleChangeValue}
             sx={{
               "@media (max-width:400px)": {
                 width: "25ch",

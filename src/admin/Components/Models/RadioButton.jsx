@@ -6,16 +6,12 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import { pink } from "@mui/material/colors";
 
-const RadioButton = ({ radioValue }) => {
+const RadioButton = ({ radioValue, handleChangeValue }) => {
   const [value, setValue] = React.useState(radioValue.toLowerCase());
 
   //   React.useEffect(() => {
   //     setValue(radioValue);
   //   }, [radioValue]);
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
 
   return (
     <FormControl>
@@ -24,11 +20,11 @@ const RadioButton = ({ radioValue }) => {
         row
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
-        value={value}
-        onChange={handleChange}
+        defaultValue={radioValue}
       >
         <FormControlLabel
-          value="female"
+          value="Female"
+          onChange={handleChangeValue}
           control={<Radio sx={{ "&.Mui-checked": { color: pink[800] } }} />}
           label="Female"
           sx={{
@@ -37,7 +33,8 @@ const RadioButton = ({ radioValue }) => {
         />
 
         <FormControlLabel
-          value="male"
+          value="Male"
+          onChange={handleChangeValue}
           control={<Radio color="default" />}
           label="Male"
         />

@@ -1,10 +1,9 @@
 import MailIcon from "@mui/icons-material/Mail";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Box,
   Collapse,
-  CssBaseline,
   Divider,
   List,
   ListItem,
@@ -22,14 +21,10 @@ import AssignmentOutlinedIcon from "@mui/icons-material/AssignmentOutlined";
 import MasksOutlinedIcon from "@mui/icons-material/MasksOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import SickOutlinedIcon from "@mui/icons-material/SickOutlined";
-import HotelOutlinedIcon from "@mui/icons-material/HotelOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import EditNoteOutlinedIcon from "@mui/icons-material/EditNoteOutlined";
 import AirportShuttleOutlinedIcon from "@mui/icons-material/AirportShuttleOutlined";
-import LocalPharmacyOutlinedIcon from "@mui/icons-material/LocalPharmacyOutlined";
-import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
-
-import { useParams } from "react-router-dom";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import { useDispatch } from "react-redux";
 import { setbreadcrumb } from "../redux/slice/breadcrumbSlice";
 
@@ -49,12 +44,12 @@ const sideMenu = [
       {
         icon: EditNoteOutlinedIcon,
         title: "View Appointments",
-        path: "appointment/view/viewAppointment",
+        path: "appointment/view/View-Appointment",
       },
       {
         icon: EditNoteOutlinedIcon,
         title: "Book Appointment",
-        path: "appointment/book/bookApointment",
+        path: "appointment/book/Book-Appointment",
       },
     ],
   },
@@ -121,7 +116,6 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
   const handleSubMenuClick = (path, title) => {
     navigate(`/admin/${path}`);
     dispatch(setbreadcrumb({ breadcrumbTitle: title }));
-    console.log(title);
   };
 
   return (
@@ -174,7 +168,6 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
 function Admin(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
   const handleDrawerToggle = () => {

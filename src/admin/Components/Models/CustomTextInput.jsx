@@ -77,7 +77,12 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({ inputLabel, inputIcon, inputValue }) => {
+const CustomTextInput = ({
+  inputLabel,
+  inputIcon,
+  inputValue,
+  handleChangeValue,
+}) => {
   const outerTheme = useTheme();
 
   return (
@@ -93,6 +98,7 @@ const CustomTextInput = ({ inputLabel, inputIcon, inputValue }) => {
               width: "25ch",
             },
           }}
+          onChange={handleChangeValue}
           defaultValue={inputValue}
           InputProps={{
             endAdornment: (

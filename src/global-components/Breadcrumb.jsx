@@ -9,9 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setbreadcrumb } from "../redux/slice/breadcrumbSlice";
 
 export default function Breadcrumb() {
-  const breadcrumbSubMenu = useSelector(
-    (state) => state.breadcrumb.breadcrumbSubMenu
-  );
+  const [subMenuDynamcPath, setSubMenuDynamcPath] = React.useState(null);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -34,16 +32,35 @@ export default function Breadcrumb() {
   const formattedDynamicPath =
     dynamicPath[0].toUpperCase() + dynamicPath.substring(1);
 
+  // Spliting sub menu pathname into an array of segments
+  const subPathSegments = pathname.split("/").filter(Boolean); // Remove empty segments
+
+  // Get the last segment of the path
+  const subDynamicPath =
+    subPathSegments.length > 0
+      ? subPathSegments[subPathSegments.length - 1]
+      : "";
+
+  // spliting the url fragment by hyphen
+  const piecesArray = subDynamicPath.split("-");
+
+  const firstPiece = piecesArray[0];
+  const secondPiece = piecesArray[1];
+
+  // checking if the path has an hyphen
+  const does_include_hyphen = subDynamicPath
+    ? subDynamicPath.includes("-")
+    : false;
+
   React.useEffect(() => {
+    setSubMenuDynamcPath(firstPiece + " " + secondPiece);
     dispatch(setbreadcrumb({ formattedDynamicPath: formattedDynamicPath }));
   }, [dispatch, formattedDynamicPath]);
 
   return (
     <div className="mt-[48px] md:mt-[70px] mb-[28px] md:flex block justify-between items-center">
       <h1 className="breadcrumb-title md:text-2xl md:mb-0 text-lg mb-5">
-        {formattedDynamicPath !== null
-          ? formattedDynamicPath
-          : breadcrumbSubMenu}
+        {does_include_hyphen ? subMenuDynamcPath : formattedDynamicPath}
       </h1>
 
       <div role="presentation">
@@ -69,12 +86,12 @@ export default function Breadcrumb() {
           <Box sx={{ display: "flex", alignItems: "center" }} color="inherit">
             {dynamicPath}
           </Box>
-          {breadcrumbSubMenu !== null ? (
+          {does_include_hyphen ? (
             <Typography
               sx={{ display: "flex", alignItems: "center" }}
               color="text.primary"
             >
-              {breadcrumbSubMenu}
+              {subMenuDynamcPath}
             </Typography>
           ) : (
             ""

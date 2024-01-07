@@ -33,7 +33,7 @@ const _route = [
     permission: ["user", "admin"],
   },
   {
-    path: "appointment/book/:bookAppointmentId",
+    path: "appointment/book/*",
     component: BookAppointments,
     permission: ["user", "admin"],
   },
