@@ -1,8 +1,7 @@
+import { DatePicker, LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import {
-  InputAdornment,
-  FormControl,
   ThemeProvider,
-  TextField,
   outlinedInputClasses,
   createTheme,
   useTheme,
@@ -77,60 +76,17 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({
-  inputLabel,
-  inputIcon,
-  inputValue,
-  handleChangeValue,
-}) => {
+const CustomDatePicker = ({ inputLabel }) => {
   const outerTheme = useTheme();
-
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
-      <TextField
-        sx={{ my: "1rem" }}
-        id="input-with-icon-textfield"
-        required
-        label={inputLabel}
-        fullWidth
-        variant="outlined"
-        onChange={handleChangeValue}
-        defaultValue={inputValue}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment sx={{ height: "2em" }} position="end">
-              {inputIcon && React.createElement(inputIcon)}
-            </InputAdornment>
-          ),
-        }}
-      />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        {/* <DemoItem label={inputLabel}> */}
+        <DatePicker label={inputLabel} sx={{ width: "100%", my: "1rem" }} />
+        {/* </DemoItem> */}
+      </LocalizationProvider>
     </ThemeProvider>
   );
 };
 
-export default CustomTextInput;
-
-{
-  /* <FormControl sx={{ m: 1 }} variant="outlined">
-  <TextField
-    required
-    label={inputLabel}
-    id="outlined-end-adornment"
-    sx={{
-      width: "28.5ch",
-      "@media (max-width:400px)": {
-        width: "25ch",
-      },
-    }}
-    onChange={handleChangeValue}
-    defaultValue={inputValue}
-    InputProps={{
-      endAdornment: (
-        <InputAdornment sx={{ height: "2em" }} position="end">
-          {inputIcon && React.createElement(inputIcon)}
-        </InputAdornment>
-      ),
-    }}
-  />
-</FormControl>; */
-}
+export default CustomDatePicker;

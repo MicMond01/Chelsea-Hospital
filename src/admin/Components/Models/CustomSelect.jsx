@@ -90,7 +90,8 @@ const CustomSelect = ({
       <Box
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1 },
+          width: "100%",
+          my: "1rem",
         }}
         noValidate
         autoComplete="off"
@@ -99,17 +100,10 @@ const CustomSelect = ({
           <TextField
             id="outlined-select-currency"
             select
+            fullWidth
             label={inputLabel}
             defaultValue={doctor}
             onChange={handleChangeValue}
-            helperText="Please select a Doctor"
-            sx={{
-              width: "28.5ch",
-              maxWidth: "100%",
-              "@media (max-width:400px)": {
-                width: "25ch",
-              },
-            }}
           >
             {inputValue.map((option, index) => (
               <MenuItem key={index} value={option}>

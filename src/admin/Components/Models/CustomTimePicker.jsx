@@ -1,13 +1,13 @@
+import React from "react";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import {
-  InputAdornment,
-  FormControl,
   ThemeProvider,
-  TextField,
   outlinedInputClasses,
   createTheme,
   useTheme,
 } from "@mui/material";
-import React from "react";
 
 const customTheme = (outerTheme) =>
   createTheme({
@@ -77,60 +77,16 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({
-  inputLabel,
-  inputIcon,
-  inputValue,
-  handleChangeValue,
-}) => {
+const CustomTimePicker = ({ inputLabel }) => {
   const outerTheme = useTheme();
 
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
-      <TextField
-        sx={{ my: "1rem" }}
-        id="input-with-icon-textfield"
-        required
-        label={inputLabel}
-        fullWidth
-        variant="outlined"
-        onChange={handleChangeValue}
-        defaultValue={inputValue}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment sx={{ height: "2em" }} position="end">
-              {inputIcon && React.createElement(inputIcon)}
-            </InputAdornment>
-          ),
-        }}
-      />
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <TimePicker label={inputLabel} sx={{ width: "100%", my: "1rem" }} />
+      </LocalizationProvider>
     </ThemeProvider>
   );
 };
 
-export default CustomTextInput;
-
-{
-  /* <FormControl sx={{ m: 1 }} variant="outlined">
-  <TextField
-    required
-    label={inputLabel}
-    id="outlined-end-adornment"
-    sx={{
-      width: "28.5ch",
-      "@media (max-width:400px)": {
-        width: "25ch",
-      },
-    }}
-    onChange={handleChangeValue}
-    defaultValue={inputValue}
-    InputProps={{
-      endAdornment: (
-        <InputAdornment sx={{ height: "2em" }} position="end">
-          {inputIcon && React.createElement(inputIcon)}
-        </InputAdornment>
-      ),
-    }}
-  />
-</FormControl>; */
-}
+export default CustomTimePicker;

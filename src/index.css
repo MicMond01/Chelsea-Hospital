@@ -58,3 +58,14 @@ select:focus {
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
   top: 5px !important;
 }
+
+.card {
+  background: #fff;
+  min-height: 50px;
+  position: relative;
+  margin-bottom: 24px;
+  border: 1px solid #f2f4f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #b7c0ce33;
+  -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
+}

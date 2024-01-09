@@ -84,7 +84,8 @@ const MultiLineInput = ({ inputLabel, inputValue, handleChangeValue }) => {
       <Box
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1 },
+          width: "100%",
+          my: "1rem",
         }}
         noValidate
         autoComplete="off"
@@ -95,13 +96,8 @@ const MultiLineInput = ({ inputLabel, inputValue, handleChangeValue }) => {
             label={inputLabel}
             multiline
             onChange={handleChangeValue}
-            sx={{
-              "@media (max-width:400px)": {
-                width: "25ch",
-              },
-            }}
             fullWidth
-            maxRows={4}
+            rows={2}
             defaultValue={inputValue}
           />
         </div>

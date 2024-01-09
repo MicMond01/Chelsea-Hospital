@@ -1,3 +1,4 @@
+import { AccountCircle } from "@mui/icons-material";
 import {
   InputAdornment,
   FormControl,
@@ -77,60 +78,33 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTextInput = ({
+const FormTextInput = ({
   inputLabel,
   inputIcon,
   inputValue,
   handleChangeValue,
 }) => {
   const outerTheme = useTheme();
-
   return (
-    <ThemeProvider theme={customTheme(outerTheme)}>
-      <TextField
-        sx={{ my: "1rem" }}
-        id="input-with-icon-textfield"
-        required
-        label={inputLabel}
-        fullWidth
-        variant="outlined"
-        onChange={handleChangeValue}
-        defaultValue={inputValue}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment sx={{ height: "2em" }} position="end">
-              {inputIcon && React.createElement(inputIcon)}
-            </InputAdornment>
-          ),
-        }}
-      />
-    </ThemeProvider>
+    <div>
+      {" "}
+      <ThemeProvider theme={customTheme(outerTheme)}>
+        <TextField
+          id="input-with-icon-textfield"
+          label="TextField"
+          fullWidth
+          variant="outlined"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+            ),
+          }}
+        />
+      </ThemeProvider>
+    </div>
   );
 };
 
-export default CustomTextInput;
-
-{
-  /* <FormControl sx={{ m: 1 }} variant="outlined">
-  <TextField
-    required
-    label={inputLabel}
-    id="outlined-end-adornment"
-    sx={{
-      width: "28.5ch",
-      "@media (max-width:400px)": {
-        width: "25ch",
-      },
-    }}
-    onChange={handleChangeValue}
-    defaultValue={inputValue}
-    InputProps={{
-      endAdornment: (
-        <InputAdornment sx={{ height: "2em" }} position="end">
-          {inputIcon && React.createElement(inputIcon)}
-        </InputAdornment>
-      ),
-    }}
-  />
-</FormControl>; */
-}
+export default FormTextInput;
