@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import CustomTextInput from "../Models/CustomTextInput";
 import CustomSelect from "../Models/CustomSelect";
 import MultiLineInput from "../Models/MultiLineInput";
 import CustomDatePicker from "../Models/CustomDatePicker";
 import { Button, Stack, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CustomTimePicker from "../Models/CustomTimePicker";
+import { setItems } from "../../../redux/slice/appointmentSlice";
+import RadioButton from "../Models/RadioButton";
 
 const BookingForm = () => {
   const [localInputValue, setLocalInputValue] = useState(null);
   const selectGender = ["Male", "Female"];
 
+  const dispatch = useDispatch();
+  const userId = useId();
   const responseValue = useSelector((state) => state.appointmentList.items);
 
-  // Extract unique consulting_doctor values
+  // Extracting unique consulting_doctor values
   const consultingDoctors = Array.from(
     new Set(responseValue.map((item) => item.consulting_doctor))
   );
@@ -26,7 +30,19 @@ const BookingForm = () => {
   };
 
   const handleSave = () => {
-    console.log(localInputValue);
+    if (localInputValue !== null) {
+      dispatch(
+        setItems([
+          ...responseValue,
+          {
+            id: userId,
+            ...localInputValue,
+          },
+        ])
+      );
+    }
+
+    console.log(responseValue);
   };
 
   return (
@@ -40,14 +56,14 @@ const BookingForm = () => {
         />
       </div>
 
-      <div className="sm:flex gap-4 block">
-        <CustomSelect
-          inputLabel="Gender"
-          inputValue={selectGender}
+      <div className="sm:grid grid-cols-2	 gap-4 block">
+        <RadioButton
+          radioValue="Male"
           handleChangeValue={(event) =>
             handleChangeValue("gender", event.target.value)
           }
         />
+
         <CustomTextInput
           inputLabel="Mobile"
           handleChangeValue={(event) =>
@@ -63,7 +79,6 @@ const BookingForm = () => {
       <div className="sm:flex gap-4 block">
         <CustomTextInput
           inputLabel="Email"
-          inputValue={selectGender}
           handleChangeValue={(event) =>
             handleChangeValue("email", event.target.value)
           }
