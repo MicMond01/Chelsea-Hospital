@@ -5,10 +5,12 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import { thunk } from "redux-thunk";
 import { combineReducers } from "redux";
+import doctorSlice from "./slice/doctorSlice";
 
 const rootReducer = combineReducers({
   breadcrumb: breadcrumbSlice,
   appointmentList: appointmentSlice,
+  doctorList: doctorSlice,
 });
 
 const persistConfig = {

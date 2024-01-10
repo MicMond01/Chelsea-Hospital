@@ -57,6 +57,16 @@ const sideMenu = [
     icon: MasksOutlinedIcon,
     title: "Doctors",
     path: "doctors",
+    submenus: [
+      {
+        title: "View Doctors",
+        path: "doctors/view/View-Doctors",
+      },
+      {
+        title: "Add Doctor",
+        path: "doctors/add/Add-Doctor",
+      },
+    ],
   },
   {
     icon: PeopleOutlinedIcon,
@@ -153,9 +163,6 @@ const MenuItem = ({ icon: Icon, title, path, currentPath, submenus }) => {
                       : "inherit",
                 }}
               >
-                <ListItemIcon>
-                  <subItem.icon />
-                </ListItemIcon>
                 <ListItemText primary={subItem.title} />
               </ListItemButton>
             ))}

@@ -69,3 +69,29 @@ select:focus {
   box-shadow: 0 0 10px #b7c0ce33;
   -webkit-box-shadow: 0 0 10px 0 rgba(183, 192, 206, 0.2);
 }
+
+.active-navButton {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-bottom: 0px solid #36c6d3;
+  background-color: rgb(102, 115, 252) !important;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2),
+    0 13px 24px -11px rgb(102, 115, 252);
+  color: #fff;
+  border-radius: 30px;
+}
+
+.nav-button {
+  background: 0 0 !important;
+  border: 0;
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 18px;
+  color: #737373;
+  font-weight: 500;
+  padding-left: 15px;
+  padding-right: 15px;
+}

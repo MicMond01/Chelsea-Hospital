@@ -7,6 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import React from "react";
+import dayjs from "dayjs";
 
 const customTheme = (outerTheme) =>
   createTheme({
@@ -76,13 +77,17 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomDatePicker = ({ inputLabel }) => {
+const CustomDatePicker = ({ inputLabel, inputValue }) => {
   const outerTheme = useTheme();
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         {/* <DemoItem label={inputLabel}> */}
-        <DatePicker label={inputLabel} sx={{ width: "100%", my: "1rem" }} />
+        <DatePicker
+          defaultValue={dayjs(inputValue)}
+          label={inputLabel}
+          sx={{ width: "100%", my: "1rem" }}
+        />
         {/* </DemoItem> */}
       </LocalizationProvider>
     </ThemeProvider>
