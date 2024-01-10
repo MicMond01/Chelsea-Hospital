@@ -95,3 +95,27 @@ select:focus {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.doctor-pic {
+  padding: 3px;
+  border: 3px solid rgb(210, 214, 222);
+  border-radius: 50% 50% 50% 50%;
+  max-width: 112px;
+}
+
+.deepPink-bgcolor {
+  background-color: #e91e63 !important;
+  color: #fff !important;
+}
+
+.btn-sm {
+  font-size: 11px;
+  padding: 6px 18px;
+}
+
+.btn-a {
+  text-shadow: none;
+  color: #337ab7;
+  text-decoration: none;
+  font-weight: 500;
+}
