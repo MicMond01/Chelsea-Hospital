@@ -76,7 +76,12 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const MultiLineInput = ({ inputLabel, inputValue, handleChangeValue }) => {
+const MultiLineInput = ({
+  inputLabel,
+  inputValue,
+  handleChangeValue,
+  name,
+}) => {
   const outerTheme = useTheme();
 
   return (
@@ -95,10 +100,10 @@ const MultiLineInput = ({ inputLabel, inputValue, handleChangeValue }) => {
             id="outlined-multiline-static"
             label={inputLabel}
             multiline
-            onChange={handleChangeValue}
+            onChange={(e) => handleChangeValue(name, e.target.value)}
             fullWidth
             rows={2}
-            defaultValue={inputValue}
+            value={inputValue}
           />
         </div>
       </Box>

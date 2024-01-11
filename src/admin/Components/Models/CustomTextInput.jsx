@@ -82,6 +82,7 @@ const CustomTextInput = ({
   inputIcon,
   inputValue,
   handleChangeValue,
+  name,
 }) => {
   const outerTheme = useTheme();
 
@@ -94,8 +95,8 @@ const CustomTextInput = ({
         label={inputLabel}
         fullWidth
         variant="outlined"
-        onChange={handleChangeValue}
-        defaultValue={inputValue}
+        onChange={(e) => handleChangeValue(name, e.target.value)}
+        value={inputValue}
         InputProps={{
           endAdornment: (
             <InputAdornment sx={{ height: "2em" }} position="end">

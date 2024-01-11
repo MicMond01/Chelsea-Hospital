@@ -78,9 +78,9 @@ const customTheme = (outerTheme) =>
   });
 
 const CustomSelect = ({
-  doctor,
   inputValue,
   inputLabel,
+  selectedValue,
   handleChangeValue,
 }) => {
   const outerTheme = useTheme();
@@ -102,7 +102,7 @@ const CustomSelect = ({
             select
             fullWidth
             label={inputLabel}
-            defaultValue={doctor}
+            value={selectedValue}
             onChange={handleChangeValue}
           >
             {inputValue.map((option, index) => (
