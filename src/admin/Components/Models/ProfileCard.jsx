@@ -11,27 +11,27 @@ const ProfileCard = ({
   specialization,
   mobile,
   deleteConfirmation,
+  editAppointmentRecord,
 }) => {
   return (
     <Card className="max-w-sm">
       <div className="flex justify-end px-4 pt-4">
         <Dropdown inline label="">
           <Dropdown.Item>
-            <a
-              href="#"
+            <div
+              onClick={editAppointmentRecord}
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Edit
-            </a>
+            </div>
           </Dropdown.Item>
           <Dropdown.Item>
-            <a
+            <div
               onClick={deleteConfirmation}
-              href="#"
               className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Delete
-            </a>
+            </div>
           </Dropdown.Item>
         </Dropdown>
       </div>

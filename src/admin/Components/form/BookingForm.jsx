@@ -14,6 +14,7 @@ const BookingForm = () => {
     patient_name: "",
     gender: "Male", // Provide a default value for gender
     mobile: "",
+    address: "",
     email: "",
     date_of_birth: null,
     consulting_doctor: "",
@@ -39,17 +40,18 @@ const BookingForm = () => {
   };
 
   const handleSave = () => {
-    dispatch(
-      setItems([
-        ...responseValue,
-        {
-          id: userId,
-          ...localInputValue,
-        },
-      ])
-    );
+    const serializableState = {
+      id: userId,
+      ...localInputValue,
+      date_of_birth: localInputValue.date_of_birth?.toISOString(),
+      date_of_appointment: localInputValue.date_of_appointment?.toISOString(),
+      time_of_appointment: localInputValue.time_of_appointment?.toISOString(), // Convert to string
+    };
 
-    console.log(responseValue);
+    dispatch(setItems([...responseValue, serializableState]));
+
+    setLocalInputValue(initialValues);
+    setSelectedDoctor("");
   };
 
   const [selectedDoctor, setSelectedDoctor] = useState("");
@@ -83,10 +85,9 @@ const BookingForm = () => {
 
       <div className="sm:grid grid-cols-2 gap-4 block">
         <RadioButton
+          name="gender"
           radioValue={localInputValue.gender}
-          handleChangeValue={(event) =>
-            handleChangeValue("gender", event.target.value)
-          }
+          handleChangeValue={handleChangeValue}
         />
 
         <CustomTextInput
@@ -98,7 +99,12 @@ const BookingForm = () => {
       </div>
 
       <div className="">
-        <MultiLineInput inputLabel="Address" />
+        <MultiLineInput
+          inputLabel="Address"
+          name="address"
+          inputValue={localInputValue.address}
+          handleChangeValue={handleChangeValue}
+        />
       </div>
 
       <div className="sm:flex gap-4 block">
@@ -130,6 +136,7 @@ const BookingForm = () => {
           <CustomDatePicker
             inputLabel="Date of Appointment"
             name="date_of_appointment"
+            inputValue={localInputValue.date_of_appointment}
             selectedDate={localInputValue.date_of_appointment}
             handleChangeValue={handleChangeValue}
           />
@@ -140,6 +147,7 @@ const BookingForm = () => {
         <CustomTimePicker
           inputLabel="Time of Appointment"
           name="time_of_appointment"
+          inputValue={localInputValue.time_of_appointment}
           selectedTime={localInputValue.time_of_appointment}
           handleChangeValue={handleChangeValue}
         />

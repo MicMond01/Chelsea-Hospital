@@ -77,19 +77,22 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomDatePicker = ({ inputLabel, inputValue, name }) => {
+const CustomDatePicker = ({
+  inputLabel,
+  inputValue,
+  handleChangeValue,
+  name,
+}) => {
   const outerTheme = useTheme();
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        {/* <DemoItem label={inputLabel}> */}
         <DatePicker
           value={dayjs(inputValue)}
-          onChange={(e) => handleChangeValue(name, e.target.value)}
+          onChange={(newDate) => handleChangeValue(name, newDate.toDate())}
           label={inputLabel}
           sx={{ width: "100%", my: "1rem" }}
         />
-        {/* </DemoItem> */}
       </LocalizationProvider>
     </ThemeProvider>
   );

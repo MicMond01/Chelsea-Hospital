@@ -25,6 +25,7 @@ import EditDialog from "../popup/EditDialog";
 import DeleteDialog from "../popup/DeleteDialog";
 import { selectedDoctorId, setItems } from "../../../redux/slice/doctorSlice";
 import EditDoctorDialog from "../popup/EditDoctorDialog";
+import CustomSearch from "../Models/CustomSearch";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -157,7 +158,7 @@ EnhancedTableHead.propTypes = {
   orderBy: PropTypes.string.isRequired,
 };
 
-function EnhancedTableToolbar(props) {
+function EnhancedTableToolbar({ filterBySearch }) {
   const formattedDynamicPath = useSelector(
     (state) => state.breadcrumb.formattedDynamicPath
   );
@@ -178,16 +179,13 @@ function EnhancedTableToolbar(props) {
         {formattedDynamicPath}
       </Typography>
 
-      <Tooltip title="Filter list">
-        <IconButton>
-          <FilterListIcon />
-        </IconButton>
-      </Tooltip>
+      <CustomSearch filterBySearch={filterBySearch} />
     </Toolbar>
   );
 }
 
 export default function DoctorTable({ responseValue }) {
+  const tableItem = useSelector((state) => state.doctorList.items);
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("name");
   const [page, setPage] = React.useState(0);
@@ -197,7 +195,6 @@ export default function DoctorTable({ responseValue }) {
   const [itemToDelete, setItemToDelete] = React.useState(null);
   const [editingItem, setEditingItem] = React.useState(null);
 
-  const tableItem = useSelector((state) => state.doctorList.items);
   // console.log(tableItem);
 
   const dispatch = useDispatch();
@@ -231,27 +228,41 @@ export default function DoctorTable({ responseValue }) {
   );
 
   const deleteConfirmation = () => {
-    const updatedItems = responseValue.filter(
-      (item) => item.id !== itemToDelete
-    );
-    dispatch(setItems(updatedItems));
+    dispatch(setItems(tableItem.filter((item) => item.id !== itemToDelete)));
+
     console.log(itemToDelete);
     setOpenModal(false);
   };
 
   const editAppointmentRecord = (id) => {
-    const selectedItem = responseValue.find((item) => item.id === id);
-    console.log(selectedItem);
+    const selectedItem = tableItem.find((item) => item.id === id);
     setEditingItem(selectedItem);
+    console.log(tableItem);
     dispatch(selectedDoctorId(id));
 
     setOpenEditModal(true);
   };
 
+  const filterBySearch = (event) => {
+    const query = event.target.value;
+    if (query === "") {
+      dispatch(setItems(tableItem)); // Reset to the original list when the query is empty
+    } else {
+      const updatedFilteredList = tableItem.filter((item) => {
+        return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+      });
+      dispatch(setItems(updatedFilteredList));
+    }
+
+    setPage(0); // Reset the page to the first page when filtering
+    setOrder("asc"); // Reset the order when filtering
+    setOrderBy("name"); // Reset the orderBy when filtering
+  };
+
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar />
+        <EnhancedTableToolbar filterBySearch={filterBySearch} />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -351,7 +362,7 @@ export default function DoctorTable({ responseValue }) {
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={responseValue.length}
+          count={tableItem.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

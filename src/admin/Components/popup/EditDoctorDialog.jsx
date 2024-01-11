@@ -22,6 +22,7 @@ import { setItems } from "../../../redux/slice/doctorSlice";
 
 const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
   const [localEditingItem, setLocalEditingItem] = React.useState(editingItem); // Initialize local state with the editingItem
+  console.log(localEditingItem);
 
   const dispatch = useDispatch();
   const responseValue = useSelector((state) => state.doctorList.items);
@@ -31,10 +32,10 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
     new Set(responseValue.map((item) => item.consulting_doctor))
   );
 
-  const handleChangeValue = (field, value) => {
+  const handleChangeValue = (name, value) => {
     setLocalEditingItem({
       ...localEditingItem,
-      [field]: value,
+      [name]: value,
     });
   };
 
@@ -60,8 +61,8 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
       >
         <div className="mx-6 mt-4">
           <div className="flex gap-3 items-center">
-            <Avatar src={editingItem.url} alt={editingItem.name} />
-            <Typography variant="h6">{editingItem.name}</Typography>
+            <Avatar src={localEditingItem.url} alt={localEditingItem.name} />
+            <Typography variant="h6">{localEditingItem.name}</Typography>
           </div>
         </div>
         <DialogContent>
@@ -69,18 +70,16 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Name"}
               inputIcon={Face6Icon}
-              inputValue={editingItem.name}
-              handleChangeValue={(event) =>
-                handleChangeValue("name", event.target.value)
-              }
+              inputValue={localEditingItem.name}
+              handleChangeValue={handleChangeValue}
+              name="name"
             />
             <CustomTextInput
               inputLabel={"Department"}
               inputIcon={BusinessCenterIcon}
-              inputValue={editingItem.department}
-              handleChangeValue={(event) =>
-                handleChangeValue("department", event.target.value)
-              }
+              inputValue={localEditingItem.department}
+              handleChangeValue={handleChangeValue}
+              name="department"
             />
           </div>
 
@@ -88,18 +87,16 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Specialization"}
               inputIcon={FlagIcon}
-              inputValue={editingItem.specialization}
-              handleChangeValue={(event) =>
-                handleChangeValue("specialization", event.target.value)
-              }
+              inputValue={localEditingItem.specialization}
+              handleChangeValue={handleChangeValue}
+              name="specialization"
             />
             <CustomTextInput
               inputLabel={"Degree"}
               inputIcon={SchoolIcon}
-              inputValue={editingItem.degree}
-              handleChangeValue={(event) =>
-                handleChangeValue("degree", event.target.value)
-              }
+              inputValue={localEditingItem.degree}
+              handleChangeValue={handleChangeValue}
+              name="degree"
             />
           </div>
 
@@ -107,18 +104,16 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Mobile"}
               inputIcon={LocalPhoneIcon}
-              inputValue={editingItem.mobile}
-              handleChangeValue={(event) =>
-                handleChangeValue("mobile", event.target.value)
-              }
+              inputValue={localEditingItem.mobile}
+              handleChangeValue={handleChangeValue}
+              name="mobile"
             />
             <CustomTextInput
               inputLabel={"Email"}
               inputIcon={MarkunreadIcon}
-              inputValue={editingItem.email}
-              handleChangeValue={(event) =>
-                handleChangeValue("email", event.target.value)
-              }
+              inputValue={localEditingItem.email}
+              handleChangeValue={handleChangeValue}
+              name="email"
             />
           </div>
 
@@ -126,10 +121,9 @@ const EditDoctorDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomDatePicker
               inputLabel={"Joining Date"}
               inputIcon={EventIcon}
-              inputValue={editingItem.joining_date}
-              handleChangeValue={(event) =>
-                handleChangeValue("joining_date", event.target.value)
-              }
+              inputValue={localEditingItem.joining_date}
+              handleChangeValue={handleChangeValue}
+              name="joining_date"
             />
           </div>
 

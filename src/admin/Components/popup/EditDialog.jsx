@@ -17,12 +17,13 @@ import PhoneEnabledIcon from "@mui/icons-material/PhoneEnabled";
 import CustomSelect from "../Models/CustomSelect";
 import { useDispatch, useSelector } from "react-redux";
 import MultiLineInput from "../Models/MultiLineInput";
-import React from "react";
+import React, { useState } from "react";
 import { setItems } from "../../../redux/slice/appointmentSlice";
 
 const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
-  const [localEditingItem, setLocalEditingItem] = React.useState(editingItem); // Initialize local state with the editingItem
-
+  const [localEditingItem, setLocalEditingItem] = React.useState(() =>
+    JSON.parse(JSON.stringify(editingItem))
+  );
   const dispatch = useDispatch();
   const responseValue = useSelector((state) => state.appointmentList.items);
 
@@ -31,11 +32,18 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
     new Set(responseValue.map((item) => item.consulting_doctor))
   );
 
-  const handleChangeValue = (field, value) => {
-    setLocalEditingItem({
-      ...localEditingItem,
-      [field]: value,
-    });
+  const handleChangeValue = (name, value) => {
+    setLocalEditingItem((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const [selectedDoctor, setSelectedDoctor] = useState("");
+
+  const handleDoctorChange = (event) => {
+    setSelectedDoctor(event.target.value);
+    handleChangeValue("consulting_doctor", event.target.value);
   };
 
   const handleSave = () => {
@@ -70,27 +78,24 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Name"}
               inputIcon={Face6Icon}
-              inputValue={editingItem.patient_name}
-              handleChangeValue={(event) =>
-                handleChangeValue("patient_name", event.target.value)
-              }
+              inputValue={localEditingItem.patient_name}
+              name="patient_name"
+              handleChangeValue={handleChangeValue}
             />
             <CustomTextInput
               inputLabel={"Email"}
               inputIcon={MarkunreadIcon}
-              inputValue={editingItem.email}
-              handleChangeValue={(event) =>
-                handleChangeValue("email", event.target.value)
-              }
+              inputValue={localEditingItem.email}
+              name="email"
+              handleChangeValue={handleChangeValue}
             />
           </div>
 
           <div className="flex ml-5">
             <RadioButton
-              radioValue={editingItem.gender}
-              handleChangeValue={(event) =>
-                handleChangeValue("gender", event.target.value)
-              }
+              radioValue={localEditingItem.gender}
+              name="gender"
+              handleChangeValue={handleChangeValue}
             />
           </div>
 
@@ -98,18 +103,16 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Choose a Date"}
               inputIcon={EventIcon}
-              inputValue={editingItem.date}
-              handleChangeValue={(event) =>
-                handleChangeValue("date", event.target.value)
-              }
+              inputValue={localEditingItem.date}
+              name="date"
+              handleChangeValue={handleChangeValue}
             />
             <CustomTextInput
               inputLabel={"Time"}
               inputIcon={WatchLaterIcon}
-              inputValue={editingItem.time_from}
-              handleChangeValue={(event) =>
-                handleChangeValue("time_from", event.target.value)
-              }
+              inputValue={localEditingItem.time_from}
+              name="time_from"
+              handleChangeValue={handleChangeValue}
             />
           </div>
 
@@ -117,29 +120,26 @@ const EditDialog = ({ openEditModal, setOpenEditModal, editingItem }) => {
             <CustomTextInput
               inputLabel={"Mobile"}
               inputIcon={PhoneEnabledIcon}
-              inputValue={editingItem.mobile}
-              handleChangeValue={(event) =>
-                handleChangeValue("mobile", event.target.value)
-              }
+              inputValue={localEditingItem.mobile}
+              name="mobile"
+              handleChangeValue={handleChangeValue}
             />
 
             <CustomSelect
               inputLabel={"Doctor"}
-              doctor={editingItem.consulting_doctor}
               inputValue={consultingDoctors}
-              handleChangeValue={(event) =>
-                handleChangeValue("consulting_doctor", event.target.value)
-              }
+              name="consulting_doctor"
+              selectedValue={selectedDoctor}
+              handleChangeValue={handleDoctorChange}
             />
           </div>
 
           <div className="sm:flex gap-4 block">
             <MultiLineInput
               inputLabel={"Injury/Condition"}
-              inputValue={editingItem.injury_condition}
-              handleChangeValue={(event) =>
-                handleChangeValue("injury_condition", event.target.value)
-              }
+              inputValue={localEditingItem.injury_condition}
+              name="injury_condition"
+              handleChangeValue={handleChangeValue}
             />
           </div>
 

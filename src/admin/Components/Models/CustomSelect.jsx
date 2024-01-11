@@ -82,6 +82,7 @@ const CustomSelect = ({
   inputLabel,
   selectedValue,
   handleChangeValue,
+  name
 }) => {
   const outerTheme = useTheme();
 

@@ -77,13 +77,23 @@ const customTheme = (outerTheme) =>
     },
   });
 
-const CustomTimePicker = ({ inputLabel }) => {
+const CustomTimePicker = ({
+  inputLabel,
+  inputValue,
+  handleChangeValue,
+  name,
+}) => {
   const outerTheme = useTheme();
 
   return (
     <ThemeProvider theme={customTheme(outerTheme)}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <TimePicker label={inputLabel} sx={{ width: "100%", my: "1rem" }} />
+        <TimePicker
+          value={inputValue}
+          label={inputLabel}
+          sx={{ width: "100%", my: "1rem" }}
+          onChange={(newTime) => handleChangeValue(name, newTime)}
+        />
       </LocalizationProvider>
     </ThemeProvider>
   );
