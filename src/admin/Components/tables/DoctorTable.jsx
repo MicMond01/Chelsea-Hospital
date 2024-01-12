@@ -245,14 +245,22 @@ export default function DoctorTable({ responseValue }) {
 
   const filterBySearch = (event) => {
     const query = event.target.value;
-    if (query === "") {
-      dispatch(setItems(tableItem)); // Reset to the original list when the query is empty
-    } else {
-      const updatedFilteredList = tableItem.filter((item) => {
-        return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
-      });
-      dispatch(setItems(updatedFilteredList));
-    }
+    // if (query === "") {
+    //   dispatch(setItems([...tableItem])); // Create a new array reference
+    // } else {
+    //   const updatedFilteredList = tableItem.filter((item) => {
+    //     return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    //   });
+    //   dispatch(setItems(updatedFilteredList));
+    // }
+
+    const updatedFilteredList = tableItem.filter((item) => {
+      const searchValue = item.name.toLowerCase();
+
+      return searchValue.indexOf(query) > -1;
+    });
+
+    dispatch(setItems(updatedFilteredList));
 
     setPage(0); // Reset the page to the first page when filtering
     setOrder("asc"); // Reset the order when filtering
