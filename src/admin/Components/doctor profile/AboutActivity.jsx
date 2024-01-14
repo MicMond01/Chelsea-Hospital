@@ -28,7 +28,7 @@ const AboutActivity = () => {
                 <strong>Location</strong>
                 <br />
                 <p className="text-[#919aa3] mb-3">Nigeria</p>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
