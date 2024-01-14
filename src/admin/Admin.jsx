@@ -66,6 +66,10 @@ const sideMenu = [
         title: "Add Doctor",
         path: "doctors/add/Add-Doctor",
       },
+      {
+        title: "Doctor Profile",
+        path: "doctors/profile/Doctor-Profile",
+      },
     ],
   },
   {
@@ -245,7 +249,7 @@ function Admin(props) {
       />
 
       <SideDrawer
-        container={container} 
+        container={container}
         mobileOpen={mobileOpen}
         handleDrawerToggle={handleDrawerToggle}
         drawerWidth={drawerWidth}
