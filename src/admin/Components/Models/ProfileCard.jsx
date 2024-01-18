@@ -2,6 +2,7 @@ import React from "react";
 
 import { Card, Dropdown } from "flowbite-react";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import { useNavigate } from "react-router-dom";
 // import Image from "next/image";
 
 const ProfileCard = ({
@@ -10,8 +11,10 @@ const ProfileCard = ({
   email,
   specialization,
   mobile,
-  deleteConfirmation,
+  id,
+  idToDeleteTracter,
   editAppointmentRecord,
+  dispatchCardId,
 }) => {
   return (
     <Card className="max-w-sm">
@@ -27,7 +30,7 @@ const ProfileCard = ({
           </Dropdown.Item>
           <Dropdown.Item>
             <div
-              onClick={deleteConfirmation}
+              onClick={idToDeleteTracter}
               className="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
             >
               Delete
@@ -50,16 +53,19 @@ const ProfileCard = ({
         <span className="text-sm text-gray-500 mb-4">{email}</span>
         <span className="text-sm ">
           <LocalPhoneIcon />
-          <a href="" className="btn-a">
+          <a href="#/" className="btn-a">
             {mobile}
           </a>
         </span>
-        <div className="mt-2 flex space-x-3 lg:mt-4 items-center">
+        <div
+          className="mt-2 flex space-x-3 lg:mt-4 items-center"
+          onClick={() => dispatchCardId()}
+        >
           <a
-            href="#"
+            href="#/"
             className="inline-flex items-center rounded-3xl border deepPink-bgcolor  text-center text-sm font-medium text-gray-900  focus:outline-none focus:ring-4 btn-sm "
           >
-            Reead More
+            Read More
           </a>
         </div>
       </div>

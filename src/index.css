@@ -103,11 +103,11 @@ select:focus {
   letter-spacing: 1px;
 }
 
-.profile-sidebar {
+/* .profile-sidebar {
   float: left;
   width: 350px;
   margin-right: 20px;
-}
+} */
 
 .profile-userpic {
   float: left;

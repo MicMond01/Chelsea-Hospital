@@ -6,8 +6,8 @@ import AddressCard from "./AddressCard";
 
 const ProfileComp = () => {
   return (
-    <div className="md:flex grid">
-      <div className="profile-sidebar">
+    <div className="md:flex block gap-4">
+      <div className="profile-sidebar md:w-[350px] w-full">
         <ProfileCard />
         <AboutMeCard />
         <AddressCard />

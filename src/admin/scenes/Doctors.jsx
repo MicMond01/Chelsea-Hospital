@@ -9,7 +9,6 @@ import DoctorGrid from "../Components/tables/DoctorGrid";
 
 const Doctors = () => {
   const [listView, setListView] = useState(true);
-  const [itemToDelete, setItemToDelete] = React.useState(null);
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.doctorList.loading);
   const doctorResponseValue = useSelector((state) => state.doctorList.items);

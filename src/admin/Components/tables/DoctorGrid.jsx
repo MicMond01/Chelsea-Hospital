@@ -3,24 +3,43 @@ import ProfileCard from "../Models/ProfileCard";
 import { selectedDoctorId, setItems } from "../../../redux/slice/doctorSlice";
 import { useDispatch } from "react-redux";
 import EditDoctorDialog from "../popup/EditDoctorDialog";
+import DeleteDialog from "../popup/DeleteDialog";
+import { useNavigate } from "react-router-dom";
 
 const DoctorGrid = ({ responseValue }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [openEditModal, setOpenEditModal] = React.useState(false);
   const [editingItem, setEditingItem] = React.useState(null);
+  const [openModal, setOpenModal] = React.useState(false);
+  const [itemToDelete, setItemToDelete] = React.useState(null);
 
-  const deleteConfirmation = (id) => {
-    const updatedItems = responseValue.filter((item) => item.id !== id);
-    dispatch(setItems(updatedItems));
-    console.log(id);
+  const idToDeleteTracter = (id) => {
+    setItemToDelete(id);
+    setOpenModal(true);
   };
 
-  const editAppointmentRecord = (id) => {
-    const selectedItem = responseValue.find((item) => item.id === id);
+  const deleteConfirmation = () => {
+    const updatedItems = responseValue.filter(
+      (item) => item.id !== itemToDelete
+    );
+    dispatch(setItems(updatedItems));
+    setOpenModal(false);
+    // console.log(itemToDelete);
+  };
+
+  const editAppointmentRecord = () => {
+    const selectedItem = responseValue.find((item) => item.id === itemToDelete);
     setEditingItem(selectedItem);
-    dispatch(selectedDoctorId(id));
+    dispatch(selectedDoctorId(itemToDelete));
 
     setOpenEditModal(true);
+  };
+  
+  const dispatchCardId = (id) => {
+    dispatch(selectedDoctorId(id));
+    navigate("/admin/doctors/profile/Doctor-Profile");
+    console.log(id);
   };
 
   return (
@@ -34,7 +53,9 @@ const DoctorGrid = ({ responseValue }) => {
             email={item.email}
             specialization={item.specialization}
             mobile={item.mobile}
-            deleteConfirmation={() => deleteConfirmation(item.id)}
+            id={item.id}
+            dispatchCardId={() => dispatchCardId(item.id)}
+            idToDeleteTracter={() => idToDeleteTracter(item.id)}
             editAppointmentRecord={() => editAppointmentRecord(item.id)}
           />
         );
@@ -44,6 +65,13 @@ const DoctorGrid = ({ responseValue }) => {
           openEditModal={openEditModal}
           setOpenEditModal={setOpenEditModal}
           editingItem={editingItem}
+        />
+      )}
+      {openModal && (
+        <DeleteDialog
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+          deleteConfirmation={deleteConfirmation}
         />
       )}
     </div>
