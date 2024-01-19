@@ -55,7 +55,7 @@ const _route = [
     permission: ["user", "admin"],
   },
   {
-    path: "doctors/profile/*",
+    path: "doctors/profile/:doctorId",
     component: DoctorProfile,
     permission: ["user", "admin"],
   },

@@ -28,14 +28,14 @@ const DoctorGrid = ({ responseValue }) => {
     // console.log(itemToDelete);
   };
 
-  const editAppointmentRecord = () => {
-    const selectedItem = responseValue.find((item) => item.id === itemToDelete);
+  const editAppointmentRecord = (id) => {
+    const selectedItem = responseValue.find((item) => item.id === id);
     setEditingItem(selectedItem);
     dispatch(selectedDoctorId(itemToDelete));
 
     setOpenEditModal(true);
   };
-  
+
   const dispatchCardId = (id) => {
     dispatch(selectedDoctorId(id));
     navigate("/admin/doctors/profile/Doctor-Profile");
