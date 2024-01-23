@@ -19,6 +19,8 @@ const Doctors = React.lazy(() => import("../admin/scenes/Doctors"));
 const AddDoctor = React.lazy(() => import("../admin/scenes/AddDoctor"));
 const DoctorProfile = React.lazy(() => import("../admin/scenes/DoctorProfile"));
 const Staff = React.lazy(() => import("../admin/scenes/Staff"));
+const StaffProfile = React.lazy(() => import("../admin/scenes/StaffProfile"));
+const AddStaff = React.lazy(() => import("../admin/scenes/AddStaff"));
 const Patients = React.lazy(() => import("../admin/scenes/Patients"));
 const Billing = React.lazy(() => import("../admin/scenes/Billing"));
 const Records = React.lazy(() => import("../admin/scenes/Records"));
@@ -55,13 +57,23 @@ const _route = [
     permission: ["user", "admin"],
   },
   {
-    path: "doctors/profile/:doctorId",
+    path: "doctors/profile/*",
     component: DoctorProfile,
     permission: ["user", "admin"],
   },
   {
-    path: "staff",
+    path: "staff/other/*",
     component: Staff,
+    permission: ["user", "admin"],
+  },
+  {
+    path: "staff/add/*",
+    component: AddStaff,
+    permission: ["user", "admin"],
+  },
+  {
+    path: "staff/profile/*",
+    component: StaffProfile,
     permission: ["user", "admin"],
   },
   {

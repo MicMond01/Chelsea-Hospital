@@ -20,8 +20,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import DeleteDialog from "../popup/DeleteDialog";
 import { selectedDoctorId, setItems } from "../../../redux/slice/doctorSlice";
-import EditDoctorDialog from "../popup/EditDoctorDialog";
 import CustomSearch from "../Models/CustomSearch";
+import EditStaffDialog from "../popup/EditStaffDialog";
+import { setStaffItem } from "../../../redux/slice/staffSlice";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -69,22 +70,10 @@ const headCells = [
     label: "Name",
   },
   {
-    id: "department",
+    id: "designation",
     numeric: true,
-    disablePadding: false,
-    label: "Department",
-  },
-  {
-    id: "specialization",
-    numeric: true,
-    disablePadding: false,
-    label: "Specialization",
-  },
-  {
-    id: "degree",
-    numeric: true,
-    disablePadding: false,
-    label: "Degree",
+    disablePadding: true,
+    label: "Designation",
   },
   {
     id: "mobile",
@@ -103,6 +92,12 @@ const headCells = [
     numeric: true,
     disablePadding: false,
     label: "Joining Date",
+  },
+  {
+    id: "address",
+    numeric: true,
+    disablePadding: false,
+    label: "Address",
   },
   {
     id: "action",
@@ -177,11 +172,11 @@ function EnhancedTableToolbar({ filterBySearch }) {
 
       <CustomSearch filterBySearch={filterBySearch} />
     </Toolbar>
-  ); 
+  );
 }
 
-export default function DoctorTable({ responseValue }) {
-  const tableItem = useSelector((state) => state.doctorList.items);
+export default function StaffTable({ responseValue }) {
+  const tableItem = useSelector((state) => state.staffList.staffItem);
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("name");
   const [page, setPage] = React.useState(0);
@@ -190,8 +185,6 @@ export default function DoctorTable({ responseValue }) {
   const [openEditModal, setOpenEditModal] = React.useState(false);
   const [itemToDelete, setItemToDelete] = React.useState(null);
   const [editingItem, setEditingItem] = React.useState(null);
-
-  // console.log(tableItem);
 
   const dispatch = useDispatch();
 
@@ -224,16 +217,16 @@ export default function DoctorTable({ responseValue }) {
   );
 
   const deleteConfirmation = () => {
-    dispatch(setItems(tableItem.filter((item) => item.id !== itemToDelete)));
+    dispatch(
+      setStaffItem(tableItem.filter((item) => item.id !== itemToDelete))
+    );
 
-    console.log(itemToDelete);
     setOpenModal(false);
   };
 
   const editAppointmentRecord = (id) => {
     const selectedItem = tableItem.find((item) => item.id === id);
     setEditingItem(selectedItem);
-    console.log(tableItem);
     dispatch(selectedDoctorId(id));
 
     setOpenEditModal(true);
@@ -281,7 +274,6 @@ export default function DoctorTable({ responseValue }) {
             <TableBody>
               {visibleRows.map((row, index) => {
                 const labelId = `enhanced-table-checkbox-${index}`;
-
                 return (
                   <TableRow
                     hover
@@ -301,20 +293,12 @@ export default function DoctorTable({ responseValue }) {
                       scope="row"
                       padding="none"
                     >
-                      {row.department}
-                    </TableCell>
-                    <TableCell align="left">{row.specialization}</TableCell>
-                    <TableCell
-                      align="center"
-                      sx={{
-                        fontWeight: 600,
-                      }}
-                    >
-                      {row.degree}
+                      {row.designation}
                     </TableCell>
                     <TableCell align="left">{row.mobile}</TableCell>
                     <TableCell align="left">{row.email}</TableCell>
                     <TableCell align="left">{row.joining_date}</TableCell>
+                    <TableCell align="left">{row.address}</TableCell>
                     <TableCell align="left">
                       <IconButton
                         onClick={() => editAppointmentRecord(row.id)}
@@ -375,7 +359,7 @@ export default function DoctorTable({ responseValue }) {
       </Paper>
 
       {openEditModal && (
-        <EditDoctorDialog
+        <EditStaffDialog
           openEditModal={openEditModal}
           setOpenEditModal={setOpenEditModal}
           editingItem={editingItem}

@@ -2,21 +2,28 @@ import React from "react";
 import profilePic from "../../../assets/images/avater1.jpg";
 import { Button } from "@mui/material";
 
-const ProfileCard = () => {
+const ProfileCard = ({ image, name, specialization }) => {
   return (
     <div className="card">
       <div className="card-body">
         <div className="row">
           <div className="profile-userpic flex items-centers">
-            <img src={profilePic} alt="profile" className="profile-userpic" />
+            <img
+              src={image ? image : profilePic}
+              alt="profile"
+              className="profile-userpic"
+            />
           </div>
         </div>
 
         <div className="mt-1 text-center">
           <div className="text-xl mb-[2px] font-bold text-[#3a405b]">
-            Dr.Kiran Patel
+            {name ? name : "Dr.Kiran Patel"}
           </div>
-          <div className="text-[#777777] mb-[5px] text-xs"> Gynaecologist </div>
+          <div className="text-[#777777] mb-[5px] text-xs">
+            {" "}
+            {specialization ? specialization : "Gynaecologist "}{" "}
+          </div>
         </div>
 
         <ul className="flex flex-col pl-0 mb-0 rounded text-sm font-normal">

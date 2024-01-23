@@ -17,7 +17,7 @@ const ProfileCard = ({
   dispatchCardId,
 }) => {
   return (
-    <Card className="max-w-sm">
+    <Card className="">
       <div className="flex justify-end px-4 pt-4">
         <Dropdown inline label="">
           <Dropdown.Item>

@@ -125,6 +125,15 @@
       "email": "noah.smith@example.com",
       "joining_date": "2023-05-20",
       "address": "1400 Cedar Road, Hamletville"
+    },
+    {
+      "id": 100,
+      "name": "Dev Okudero Michael",
+      "designation": "Frontend Developer",
+      "mobile": "+2348091417116",
+      "email": "gbengaokudero@gmail.com",
+      "joining_date": "2022-04-10",
+      "address": "Alimosho, Lagos"
     }
   ]
 }

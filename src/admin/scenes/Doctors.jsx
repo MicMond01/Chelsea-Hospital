@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Breadcrumb from "../../global-components/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { isLoading, setItems } from "../../redux/slice/doctorSlice";
-import { Button, CircularProgress } from "@mui/material";
+import {  CircularProgress } from "@mui/material";
 import DoctorTable from "../Components/tables/DoctorTable";
 import axios from "axios";
 import DoctorGrid from "../Components/tables/DoctorGrid";

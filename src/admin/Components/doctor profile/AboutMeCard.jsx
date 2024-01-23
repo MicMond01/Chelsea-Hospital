@@ -1,6 +1,6 @@
 import React from "react";
 
-const AboutMeCard = () => {
+const AboutMeCard = ({ name, specialization }) => {
   return (
     <div className="card">
       <div className="card-head">
@@ -9,8 +9,12 @@ const AboutMeCard = () => {
 
       <div className="card-body">
         <div className="text-left mt-3 mb-6">
-          Hello I am Kiran Patel a Gynaecologist in Sanjivni Hospital Surat. I
+          {`
+          Hello I am ${name !== null ? name : "Okudero Michael"} a ${
+            specialization ? specialization : " Gynaecologist"
+          } in Chelsea Hospital Lagos. I
           love to work with all my hospital staff and seniour doctors.
+        `}
         </div>
 
         <ul className="flex flex-col pl-0 mb-0 rounded text-sm font-normal">

@@ -74,8 +74,22 @@ const sideMenu = [
   },
   {
     icon: PeopleOutlinedIcon,
-    title: "Staf",
+    title: "Other Staff",
     path: "staff",
+    submenus: [
+      {
+        title: "All Staff",
+        path: "staff/other/Other-Staff",
+      },
+      {
+        title: "Add Staff",
+        path: "staff/add/Add-Staff",
+      },
+      {
+        title: "Staff Profile",
+        path: "staff/profile/Staff-Profile",
+      },
+    ],
   },
   {
     icon: SickOutlinedIcon,

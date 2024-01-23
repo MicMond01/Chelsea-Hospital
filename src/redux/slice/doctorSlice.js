@@ -4,7 +4,7 @@ const apiDoctorSlice = createSlice({
   name: "doctorData",
   initialState: {
     items: [],
-    selectedDoctorId: null,
+    selectedDoctorId: 100,
     loading: false, // Add a loading state
   },
   reducers: {
@@ -13,7 +13,7 @@ const apiDoctorSlice = createSlice({
       state.loading = false;
     },
     selectedDoctorId: (state, action) => {
-      state.selectedItemId = action.payload;
+      state.selectedDoctorId = action.payload;
       // console.log(action);
     },
     isLoading: (state, action) => {

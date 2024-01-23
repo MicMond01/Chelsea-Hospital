@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileCard from "../Models/ProfileCard";
 import { selectedDoctorId, setItems } from "../../../redux/slice/doctorSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import EditDoctorDialog from "../popup/EditDoctorDialog";
 import DeleteDialog from "../popup/DeleteDialog";
 import { useNavigate } from "react-router-dom";
@@ -39,11 +39,10 @@ const DoctorGrid = ({ responseValue }) => {
   const dispatchCardId = (id) => {
     dispatch(selectedDoctorId(id));
     navigate("/admin/doctors/profile/Doctor-Profile");
-    console.log(id);
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {responseValue.map((item, index) => {
         return (
           <ProfileCard

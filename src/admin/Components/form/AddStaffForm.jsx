@@ -7,9 +7,9 @@ import CustomDatePicker from "../Models/CustomDatePicker";
 import CustomTextInput from "../Models/CustomTextInput";
 import RadioButton from "../Models/RadioButton";
 
-const DoctorForm = () => {
+const AddStaffForm = () => {
   const initialValues = {
-    doctor_name: "",
+    staff_name: "",
     gender: "Male", // Provide a default value for gender
     mobile: "",
     password: "",
@@ -24,10 +24,10 @@ const DoctorForm = () => {
   const [localInputValue, setLocalInputValue] = useState(initialValues);
   //   const dispatch = useDispatch();
   const userId = useId();
-  const responseValue = useSelector((state) => state.doctorList.items);
+  const responseValue = useSelector((state) => state.staffList.staffItem);
 
   const hospitalDepartments = Array.from(
-    new Set(responseValue.map((item) => item.department))
+    new Set(responseValue.map((item) => item.designation))
   );
 
   const handleChangeValue = (name, value) => {
@@ -69,7 +69,13 @@ const DoctorForm = () => {
         <CustomTextInput
           inputLabel="Full Name"
           name="doctor_name"
-          inputValue={localInputValue.doctor_name}
+          inputValue={localInputValue.staff_name}
+          handleChangeValue={handleChangeValue}
+        />
+        <CustomTextInput
+          inputLabel="Mobile"
+          name="mobile"
+          inputValue={localInputValue.mobile}
           handleChangeValue={handleChangeValue}
         />
       </div>
@@ -80,11 +86,10 @@ const DoctorForm = () => {
           radioValue={localInputValue.gender}
           handleChangeValue={handleChangeValue}
         />
-
         <CustomTextInput
-          inputLabel="Mobile"
-          name="mobile"
-          inputValue={localInputValue.mobile}
+          inputLabel="Email"
+          name="email"
+          inputValue={localInputValue.email}
           handleChangeValue={handleChangeValue}
         />
       </div>
@@ -105,17 +110,18 @@ const DoctorForm = () => {
       </div>
 
       <div className="sm:flex gap-4 block">
-        <CustomTextInput
-          inputLabel="Designation"
-          name="designation"
-          inputValue={localInputValue.designation}
-          handleChangeValue={handleChangeValue}
-        />
         <CustomSelect
-          inputLabel="Select Department"
+          inputLabel="Select Designation"
           inputValue={hospitalDepartments}
           selectedValue={selectedDepartment}
           handleChangeValue={handleDepartmentChange}
+        />
+        <CustomDatePicker
+          inputLabel="Date of Birth"
+          name="date_of_birth"
+          inputValue={localInputValue.date_of_birth}
+          selectedDate={localInputValue.date_of_birth}
+          handleChangeValue={handleChangeValue}
         />
       </div>
 
@@ -124,22 +130,6 @@ const DoctorForm = () => {
           inputLabel="Address"
           name="address"
           inputValue={localInputValue.address}
-          handleChangeValue={handleChangeValue}
-        />
-      </div>
-
-      <div className="sm:flex gap-4 block">
-        <CustomTextInput
-          inputLabel="Email"
-          name="email"
-          inputValue={localInputValue.email}
-          handleChangeValue={handleChangeValue}
-        />
-        <CustomDatePicker
-          inputLabel="Date of Birth"
-          name="date_of_birth"
-          inputValue={localInputValue.date_of_birth}
-          selectedDate={localInputValue.date_of_birth}
           handleChangeValue={handleChangeValue}
         />
       </div>
@@ -169,4 +159,4 @@ const DoctorForm = () => {
   );
 };
 
-export default DoctorForm;
+export default AddStaffForm;

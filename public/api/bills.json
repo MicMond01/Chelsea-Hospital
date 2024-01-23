@@ -268,23 +268,6 @@
       ]
     },
     {
-      "id": 3016,
-      "patient_name": "Mia Harrison",
-      "admission_id": 316,
-      "doctor_name": "Dr. Benjamin Anderson",
-      "status": "Pending",
-      "date": "2023-09-01",
-      "tax": 8.0,
-      "discount": 16.0,
-      "total": 260.0,
-      "services": [
-        "Emergency Medicine Consultation",
-        "Blood Test",
-        "Medications"
-      ],
-      "payments": []
-    },
-    {
       "id": 3017,
       "patient_name": "Noah Foster",
       "admission_id": 317,
@@ -340,19 +323,6 @@
           "method": "Credit Card"
         }
       ]
-    },
-    {
-      "id": 3020,
-      "patient_name": "Grace Turner",
-      "admission_id": 320,
-      "doctor_name": "Dr. Logan Taylor",
-      "status": "Pending",
-      "date": "2023-11-01",
-      "tax": 8.5,
-      "discount": 17.0,
-      "total": 290.0,
-      "services": ["Cardiology Consultation", "ECG", "Echocardiogram"],
-      "payments": []
     },
     {
       "id": 3021,

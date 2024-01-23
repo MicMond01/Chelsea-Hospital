@@ -8,7 +8,7 @@ const BookAppointment = () => {
       <Breadcrumb />{" "}
       <div className="">
         <BookingForm />
-      </div>
+      </div> 
     </div>
   );
 };

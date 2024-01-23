@@ -80,7 +80,7 @@ const customTheme = (outerTheme) =>
 const CustomTextInput = ({
   inputLabel,
   inputIcon,
-  inputValue,
+  inputValue, 
   handleChangeValue,
   name,
 }) => {
